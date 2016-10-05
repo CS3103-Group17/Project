@@ -1,0 +1,54 @@
+Host: http://cfa.nus.edu.sg/calendar/16-oneplusone
+Time taken in ns: 908604789Host: http://nus.edu.sg
+Time taken in ns: 459147140Host: http://alumnet.nus.edu.sg/
+Time taken in ns: 32971380Host: http://cfa.nus.edu.sg/calendar/2-emlspectrum
+Time taken in ns: 691300546Host: http://bit.ly/spectrumfest2016
+Time taken in ns: 1506653030Host: http://cfa.nus.edu.sg/calendar
+Time taken in ns: 1510331811Host: http://cfa.nus.edu.sg/calendar/36-emccttf
+Time taken in ns: 656313175Host: http://bit.ly/EMCC-thumbtoofat
+Time taken in ns: 1604631105Host: http://cfa.nus.edu.sg
+Time taken in ns: 228509819Host: http://cfa.nus.edu.sg/calendar/10-test-for-the-event-details
+Time taken in ns: 966582271Host: http://cfa.nus.edu.sg/calendar/12-archlib
+Time taken in ns: 1378735913Host: http://cfa.nus.edu.sg/calendar/13-bhpcr
+Time taken in ns: 1068235336Host: http://cfa.nus.edu.sg/calendar/14-resourcegallery
+Time taken in ns: 1276010129Host: http://cfa.nus.edu.sg/calendar/15-fivetrees
+Time taken in ns: 721401280Host: http://cfa.nus.edu.sg/calendar/16-oneplusone
+Time taken in ns: 954690764Host: http://cfa.nus.edu.sg/calendar/17-lkcinks
+Time taken in ns: 1014223494Host: http://cfa.nus.edu.sg/calendar/18-lineswwrw
+Time taken in ns: 848227818Host: http://cfa.nus.edu.sg/calendar/19-wwrw
+Time taken in ns: 740017283Host: http://cfa.nus.edu.sg/calendar/21-concrete-island-pr
+Time taken in ns: 686954037Host: http://cfa.nus.edu.sg/calendar/37-emcctac
+Time taken in ns: 636428930Host: http://bit.ly/emcctac
+Time taken in ns: 1772944279Host: http://cfa.nus.edu.sg/calendar/38-emccbodelec
+Time taken in ns: 682750188Host: http://bit.ly/EMCC-BodyElectric
+Time taken in ns: 1359976754Host: http://cfa.nus.edu.sg/calendar/39-emccshea
+Time taken in ns: 661864630Host: http://nus.edu.sg
+Time taken in ns: 376452046
+Host: http://alumnet.nus.edu.sg
+Time taken in ns: 14303819
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 740453946
+Host: http://bit.ly
+Time taken in ns: 1424807942
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 1494880947
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 630853941
+Host: http://bit.ly
+Time taken in ns: 479225200
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 231313851
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 912182932
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 1380103709
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 1077680646
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 1149266830
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 734967951
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 913441922
+Host: http://cfa.nus.edu.sg
+Time taken in ns: 1015159996
