@@ -45,5 +45,40 @@
 		    <artifactId>jsoup</artifactId>
 		    <version>1.8.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.ebay</groupId>
+			<artifactId>ebay</artifactId>
+			<version>981</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ebay.sdk.call</groupId>
+			<artifactId>ebay.call</artifactId>
+			<version>981</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ebay.helper</groupId>
+			<artifactId>ebay.helper</artifactId>
+			<version>981</version>
+		</dependency>
+		<dependency>
+			<groupId>logger.slf4j</groupId>
+			<artifactId>slf4j</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>logger.slf4j.simple</groupId>
+			<artifactId>slf4j.simple</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>xml.xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>1</version>
+		</dependency>
 	</dependencies>
 </project>
