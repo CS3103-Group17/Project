@@ -1,8 +1,5 @@
 package main;
 
-// use java sdk to authenticate
-import com.ebay.soap.eBLBaseComponents.*;
-import com.ebay.sdk.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -25,7 +22,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import org.apache.axis.types.URI.MalformedURIException;
 import java.rmi.RemoteException;
 import java.util.Properties;
 import java.io.IOException;
@@ -242,9 +238,9 @@ public class EbayCrawler {
         System.out.println(name + "::" + value);
     }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {	//for testing, to be removed
   	
-	  EbayCrawler driver = new EbayCrawler();	//default 10 results
+	  EbayCrawler driver = new EbayCrawler();
       String tag = "cd";
       driver.run(java.net.URLEncoder.encode(tag, "UTF-8"));
       
@@ -253,6 +249,15 @@ public class EbayCrawler {
   public void findByName(String query, int numberOfMaxResults) throws Exception {
 	  	
 	  EbayCrawler driver = new EbayCrawler(numberOfMaxResults);
+      driver.run(java.net.URLEncoder.encode(query, "UTF-8"));
+      
+      //return type TODO
+      
+  }
+  
+  public void findByName(String query) throws Exception {	//default 10
+	  	
+	  EbayCrawler driver = new EbayCrawler();
       driver.run(java.net.URLEncoder.encode(query, "UTF-8"));
       
       //return type TODO
