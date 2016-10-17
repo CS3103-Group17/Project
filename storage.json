@@ -1,0 +1,12 @@
+{
+  "cities": [
+    {
+      "headers": [
+        "Getting Around"
+      ],
+      "headerContents": {
+        "Getting Around": "Take the Train"
+      }
+    }
+  ]
+}
