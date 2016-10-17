@@ -1,38 +1,39 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class City {
-	private ArrayList<String> headers;
-	private Map<String, String> headerContents;
+	private String name;
+	private ArrayList<Section> sections;
 	
 	public City(){
-		headers = new ArrayList<String>();
-		headerContents = new HashMap<String, String>();
+		setName("");
+		setSections(new ArrayList<Section>());
 	}
 	
-	public City(String headerName, String headerContent){
-		headers = new ArrayList<String>();
-		headerContents = new HashMap<String, String>();
-		addHeader(headerName, headerContent);
+	public City(String name){
+		setName(name);
+		setSections(new ArrayList<Section>());
+		
+	}
+
+	public ArrayList<Section> getSections() {
+		return sections;
+	}
+
+	public void setSections(ArrayList<Section> sections) {
+		this.sections = sections;
 	}
 	
-	public ArrayList<String> getHeaders(){
-		return headers;
+	public void addSection(Section section){
+		this.sections.add(section);
 	}
-	
-	public String getHeaderContent(String header){
-		return headerContents.get(header);
+
+	public String getName() {
+		return name;
 	}
-	
-	public Map<String, String> getAllHeaderContents(){
-		return headerContents;
-	}
-	
-	public void addHeader(String headerName, String headerContent){
-		this.headers.add(headerName);
-		this.headerContents.put(headerName, headerContent);
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

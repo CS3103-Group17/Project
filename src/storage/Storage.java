@@ -21,15 +21,15 @@ import java.lang.reflect.Type;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 public class Storage {
 	private File saveFile;
-	private Type dataListsType;
 	private GsonBuilder builder;
 	private Gson gson;
 	private static final Logger logger = Logger.getLogger(Storage.class.getName());
 
 	public Storage() {
-		dataListsType = new TypeToken<City>() {}.getType();
 		builder = new GsonBuilder().setPrettyPrinting();
 		/*builder.registerTypeAdapter(ObjectProperty.class, new PropertyTypeAdapter());
 		builder.registerTypeAdapter(StringProperty.class, new PropertyTypeAdapter());
@@ -92,7 +92,7 @@ public class Storage {
             BufferedWriter writer = new BufferedWriter(
                     new FileWriter(file));
 
-			writer.write(jsonString);
+			writer.write(StringEscapeUtils.unescapeXml(jsonString));
 			writer.close();
 		} catch (IOException e) {
 			logger.log(Level.INFO, "\"{0}\" saving JSON to file. JSON: \"{1}\"", new Object[] { e, jsonString });
@@ -101,4 +101,8 @@ public class Storage {
 
 		return true;
 	}
+    
+    public boolean deleteFile(){
+    	return saveFile.delete();
+    }
 }
