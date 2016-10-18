@@ -18,4 +18,14 @@ public class Cities {
 		this.cities.add(city);
 	}
 	
+	public City findCity(String name){
+		for(City c: cities){
+			if(c.getName().equals(name)){
+				return c;
+			}
+		}
+		
+		return null;
+	}
+	
 }

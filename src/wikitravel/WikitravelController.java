@@ -68,4 +68,8 @@ public class WikitravelController {
 			
 			return pages;
 		}
+		
+		public Cities getCities(){
+			return cities;
+		}
 }

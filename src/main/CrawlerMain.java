@@ -1,34 +1,23 @@
 package main;
 import java.io.IOException;
 import java.util.Scanner;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import ui.MainUI;
 
-public class CrawlerMain {
 
-	private static Scanner reader;
+public class CrawlerMain extends Application {
 
-	public static void main(String[] args) throws IOException {
-		MainController con = new MainController();
-		
-		boolean stop = false;
-		reader = new Scanner(System.in);
-		
-		while(!stop){
-			System.out.println("Enter a url (Press q to quit): ");
-			
-			String input = reader.nextLine();
-			
-			if(input.equals("q")){
-				stop = true;
-			}
-			else if(!input.equals("")){
-				con.addURL(input);
-			}
-			
-		}
-		
-		con.runCrawler();
+	private MainUI ui;
+
+	public static void main(String[] args) {
+		launch(args);
 	}
-	
-	
 
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		ui = new MainUI();
+		ui.setStage(primaryStage);
+	}
+ 
 }

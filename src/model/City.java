@@ -4,17 +4,22 @@ import java.util.ArrayList;
 
 public class City {
 	private String name;
+	private String summaryContent;
 	private ArrayList<Section> sections;
+	private ArrayList<ImageData> images;
 	
 	public City(){
 		setName("");
+		setSummaryContent("");
 		setSections(new ArrayList<Section>());
+		setImages(new ArrayList<ImageData>());
 	}
 	
 	public City(String name){
 		setName(name);
+		setSummaryContent("");
 		setSections(new ArrayList<Section>());
-		
+		setImages(new ArrayList<ImageData>());
 	}
 
 	public ArrayList<Section> getSections() {
@@ -35,5 +40,35 @@ public class City {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Section findSection(String sectionName){
+		for(Section s : sections){
+			if(s.getName().equals(sectionName)){
+				return s;
+			}
+		}
+		
+		return null;
+	}
+
+	public String getSummaryContent() {
+		return summaryContent;
+	}
+
+	public void setSummaryContent(String summaryContent) {
+		this.summaryContent = summaryContent;
+	}
+
+	public ArrayList<ImageData> getImages() {
+		return images;
+	}
+
+	public void setImages(ArrayList<ImageData> images) {
+		this.images = images;
+	}
+	
+	public void addImage(ImageData image){
+		images.add(image);
 	}
 }
