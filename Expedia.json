@@ -1,0 +1,3221 @@
+{
+  "map": {
+    "HotelListResponse": {
+      "map": {
+        "cacheKey": "-1b1b93af:157e16bc6de:3fe7",
+        "numberOfRoomsRequested": 1,
+        "HotelList": {
+          "map": {
+            "HotelSummary": {
+              "myArrayList": [
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 3,
+                    "locationDescription": "Near Gyeongbok Palace",
+                    "latitude": 37.57779,
+                    "@order": "0",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200802747,
+                            "expediaPropertyId": 9224458,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Double Room, Shared Bathroom",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Breakfast",
+                                        "@id": "1073742786"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "promoType": "Standard",
+                                    "@rateChange": "false",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "5af4d44c-aa22-458e-a81b-b588d767cde7-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "88.96",
+                                                    "@baseRate": "111.20"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "88.96",
+                                                    "@baseRate": "111.20"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 221863301,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "88.96",
+                                                    "@baseRate": "111.20"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "88.96",
+                                                    "@baseRate": "111.20"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "88.96",
+                                        "@surchargeTotal": "37.34",
+                                        "@commissionableUsdTotal": "177.92",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "37.34",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "177.92",
+                                        "@total": "215.26",
+                                        "@averageBaseRate": "111.20",
+                                        "@averageRate": "88.96",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 20%"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 204008585,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 2048,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98018,
+                    "address2": "Jongno-gu",
+                    "address1": "22-17 Samchung-ro",
+                    "highRate": 111.2,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 88.96,
+                    "hotelId": 476877,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Ohbok Guesthouse in Seoul (Jongno), you\u0026apos;ll be minutes from National Museum of Modern and Contemporary Art, Seoul and Gyeongbok Palace.  This",
+                    "proximityDistance": 1.5743241,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/476877/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/10000000/9230000/9224500/9224458/9224458_12_t.jpg",
+                    "name": "Ohbok Guesthouse",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 13,
+                    "postalCode": "130-811",
+                    "locationDescription": "Near Dongdaemun Market",
+                    "latitude": 37.57659,
+                    "@order": "1",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-123456-4.gif",
+                    "tripAdvisorRating": 3.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200828839,
+                            "expediaPropertyId": 9421356,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Deluxe Double Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Parking",
+                                        "@id": "2109"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 2,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "b2e2903d-05a1-43ff-ab94-8a78f2f38aa3-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "106.10",
+                                                    "@baseRate": "132.62"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "122.42",
+                                                    "@baseRate": "153.03"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 218913251,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "106.10",
+                                                    "@baseRate": "132.62"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "122.42",
+                                                    "@baseRate": "153.03"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "122.42",
+                                        "@surchargeTotal": "47.99",
+                                        "@commissionableUsdTotal": "228.52",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "47.99",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "228.52",
+                                        "@total": "276.51",
+                                        "@averageBaseRate": "142.82",
+                                        "@averageRate": "114.26",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 20%"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207601931,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 135413769,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.02653,
+                    "address1": "28, Wangsan-ro, Dongdaemun-gu",
+                    "highRate": 153.03,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 106.1,
+                    "hotelId": 480469,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Hotel Boutique 9 in Seoul, you\u0026apos;ll be minutes from Seoul Folk Flea Market and close to Dongdaemun Market.  This boutique hotel is within close",
+                    "proximityDistance": 3.5805495,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/480469/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/10000000/9430000/9421400/9421356/9421356_63_t.jpg",
+                    "name": "Hotel Boutique 9",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 33,
+                    "postalCode": 100873,
+                    "locationDescription": "Near Sungnyemun Gate",
+                    "latitude": 37.55857,
+                    "@order": "2",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200736794,
+                            "expediaPropertyId": 8680691,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Standard Twin Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Continental Breakfast",
+                                        "@id": "2103"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 3,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "46f63dfb-42e8-4a60-b03e-fc8b3fab6e42-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "101.00",
+                                        "@surchargeTotal": "42.42",
+                                        "@commissionableUsdTotal": "202.00",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "42.42",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "202.00",
+                                        "@total": "244.42",
+                                        "@averageBaseRate": "101.00",
+                                        "@averageRate": "101.00",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 206975804,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 134236168,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98076,
+                    "address1": "20-3, Toegye-ro 10-gil, Jung-gu",
+                    "highRate": 101.0,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 101.0,
+                    "hotelId": 467746,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Hotel MIDO Myeongdong in Seoul (Jung-gu), you\u0026apos;ll be minutes from Namdaemun Market and Sungnyemun Gate.  This hotel is close to Gyeongbok Palace and",
+                    "proximityDistance": 0.8428364,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/467746/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/9000000/8690000/8680700/8680691/8680691_63_t.jpg",
+                    "name": "Hotel MIDO Myeongdong",
+                    "airportCode": "GMP",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 12,
+                    "postalCode": "04563",
+                    "locationDescription": "Near Dongdaemun Market",
+                    "latitude": 37.56793,
+                    "@order": "3",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-123456-4.gif",
+                    "tripAdvisorRating": 4.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201335675,
+                            "expediaPropertyId": 12775523,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Economy Twin Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "c4cc5d42-b1e9-4c28-b2c3-36e8cc5ef42d-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "131.30",
+                                                    "@baseRate": "131.30"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "131.30",
+                                                    "@baseRate": "131.30"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "131.30",
+                                        "@surchargeTotal": "24.24",
+                                        "@commissionableUsdTotal": "242.40",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "24.24",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "242.40",
+                                        "@total": "266.64",
+                                        "@averageBaseRate": "121.20",
+                                        "@averageRate": "121.20",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 206647322,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 131329,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.00895,
+                    "address2": "Jung-gu",
+                    "address1": "14F Migliore 263, Jangchungdan-ro",
+                    "highRate": 131.3,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 111.1,
+                    "hotelId": 558324,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at HOTEL Migliore Seoul, you\u0026apos;ll be centrally located in Seoul, steps from Dongdaemun Market and Dongdaemun History \u0026amp; Culture Park.  This hotel is within",
+                    "proximityDistance": 2.4783163,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/558324/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/13000000/12780000/12775600/12775523/12775523_172_t.jpg",
+                    "name": "HOTEL Migliore Seoul",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 33,
+                    "postalCode": 121816,
+                    "locationDescription": "In Seoul (Hongdae)",
+                    "latitude": 37.55904,
+                    "@order": "4",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-123456-4.gif",
+                    "tripAdvisorRating": 4.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201163487,
+                            "expediaPropertyId": 11586276,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Twin Room, Private Bathroom",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "f382e693-afde-4b98-a00c-f958c1caef51-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "99.87",
+                                                    "@baseRate": "99.87"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "99.87",
+                                                    "@baseRate": "99.87"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "99.87",
+                                                    "@baseRate": "99.87"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "99.87",
+                                                    "@baseRate": "99.87"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "99.87",
+                                        "@surchargeTotal": "19.98",
+                                        "@commissionableUsdTotal": "199.74",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "19.98",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "199.74",
+                                        "@total": "219.72",
+                                        "@averageBaseRate": "99.87",
+                                        "@averageRate": "99.87",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 205516199,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 0,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.9246,
+                    "address1": "153-2 Donggyo-dong, Mapo-gu",
+                    "highRate": 99.87,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 99.87,
+                    "hotelId": 532822,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Egg Guesthouse Korea in Seoul (Hongdae), you\u0026apos;ll be convenient to Trickeye Museum and Yeonsei University.  This guesthouse is within close proximity of",
+                    "proximityDistance": 2.2345078,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/532822/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/12000000/11590000/11586300/11586276/11586276_14_t.jpg",
+                    "name": "Egg Guesthouse Korea",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 1,
+                    "postalCode": "04534",
+                    "locationDescription": "Near Deoksugung Palace",
+                    "latitude": 37.56479,
+                    "@order": "5",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201605996,
+                            "expediaPropertyId": 15725450,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Triple Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 2,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "437232b5-5bba-477c-b6d4-46e36d864889-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "89.77",
+                                                    "@baseRate": "89.77"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "89.77",
+                                                    "@baseRate": "89.77"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "101.00",
+                                        "@surchargeTotal": "19.08",
+                                        "@commissionableUsdTotal": "190.77",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "19.08",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "190.77",
+                                        "@total": "209.85",
+                                        "@averageBaseRate": "95.38",
+                                        "@averageRate": "95.38",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 208062159,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 0,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98463,
+                    "address2": "5th, 6th Floor",
+                    "address1": "21, Myeongdong 9-gil, Jung-gu",
+                    "highRate": 101.0,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 89.77,
+                    "hotelId": 612550,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Philstay Myeongdong Central Hotel in Seoul (Jung-gu), you\u0026apos;ll be minutes from Lotte Department Store and Myeongdong Cathedral.  This hotel is close to",
+                    "proximityDistance": 1.1468805,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/612550/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/16000000/15730000/15725500/15725450/8a0a8cf5_t.jpg",
+                    "name": "Philstay Myeongdong Central Hotel",
+                    "airportCode": "ICN",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 3.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 39,
+                    "postalCode": "135-839",
+                    "locationDescription": "Near COEX Convention and Exhibition Center",
+                    "latitude": 37.50499,
+                    "@order": "6",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-123456-4.gif",
+                    "tripAdvisorRating": 3.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201041333,
+                            "expediaPropertyId": 11017478,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Standard Twin Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Parking",
+                                        "@id": "2109"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 5,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "03974741-cedd-4ae3-b7d6-01c501ced195-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "75.27",
+                                                    "@baseRate": "75.27"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "75.27",
+                                                    "@baseRate": "75.27"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "75.27",
+                                                    "@baseRate": "75.27"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "75.27",
+                                                    "@baseRate": "75.27"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "75.27",
+                                        "@surchargeTotal": "15.04",
+                                        "@commissionableUsdTotal": "150.54",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "15.04",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "150.54",
+                                        "@total": "165.58",
+                                        "@averageBaseRate": "75.27",
+                                        "@averageRate": "75.27",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 205079196,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 16384,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.05332,
+                    "address1": "46, Seolleung-ro 90-gil, Gangnam-gu",
+                    "highRate": 75.27,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 75.27,
+                    "hotelId": 515676,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at JbIS hotel in Seoul (COEX), you\u0026apos;ll be minutes from Seonjeongneung Royal Tombs and COEX Convention and Exhibition Center.  This hotel is within close",
+                    "proximityDistance": 6.0655413,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/515676/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/12000000/11020000/11017500/11017478/11017478_16_t.jpg",
+                    "name": "JbIS hotel",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 5,
+                    "locationDescription": "Near Dongdaemun Market",
+                    "latitude": 37.56542,
+                    "@order": "7",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201275898,
+                            "expediaPropertyId": 12359206,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Double Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 5,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "10dd3b96-e0a0-4399-9a42-8bf6e2de2330-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": true,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "101.00",
+                                        "@surchargeTotal": "20.20",
+                                        "@commissionableUsdTotal": "202.00",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "20.20",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "202.00",
+                                        "@total": "222.20",
+                                        "@averageBaseRate": "101.00",
+                                        "@averageRate": "101.00",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 208636755,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 0,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.00811,
+                    "address2": "Jung-gu",
+                    "address1": "11F, Ulji-ro 7-ga 105",
+                    "highRate": 101.0,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 101.0,
+                    "hotelId": 548974,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at aPM Guesthouse in Seoul (Jung-gu), you\u0026apos;ll be minutes from K-live and Dongdaemun Market.  This guesthouse is within close proximity of Dongdaemun",
+                    "proximityDistance": 2.392366,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/548974/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/13000000/12360000/12359300/12359206/12359206_22_t.jpg",
+                    "name": "aPM Guesthouse",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 39,
+                    "locationDescription": "Near Dongdaemun Market",
+                    "latitude": 37.56637,
+                    "@order": "8",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-123456-4.gif",
+                    "tripAdvisorRating": 3.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201180880,
+                            "expediaPropertyId": 11673279,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Deluxe Twin Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Parking",
+                                        "@id": "2109"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 3,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "c4d083da-cc5d-4f29-8688-51d96610aaa8-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "95.39",
+                                                    "@baseRate": "95.39"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "112.22",
+                                                    "@baseRate": "112.22"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "95.39",
+                                                    "@baseRate": "95.39"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "112.22",
+                                                    "@baseRate": "112.22"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "112.22",
+                                        "@surchargeTotal": "20.76",
+                                        "@commissionableUsdTotal": "207.61",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "20.76",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "207.61",
+                                        "@total": "228.37",
+                                        "@averageBaseRate": "103.80",
+                                        "@averageRate": "103.80",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 205576128,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 134234112,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.00499,
+                    "address2": "Jung-gu",
+                    "address1": "53-4 Eulji-ro 6-ga",
+                    "highRate": 112.22,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 95.39,
+                    "hotelId": 534582,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Juststay Hotel in Seoul (Jung-gu), you\u0026apos;ll be minutes from K-live and Dongdaemun Design Plaza.  This hotel is close to Dongdaemun Market and Gyeongbok",
+                    "proximityDistance": 2.2409012,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/534582/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/12000000/11680000/11673300/11673279/11673279_3_t.jpg",
+                    "name": "Juststay Hotel",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 5,
+                    "postalCode": "04536",
+                    "locationDescription": "Near Sungnyemun Gate",
+                    "latitude": 37.56276,
+                    "@order": "9",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201496037,
+                            "expediaPropertyId": 15021550,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Standard Twin Room, 2 Single Beds",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Breakfast",
+                                        "@id": "1073742786"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "2e5fc8c0-3b3e-40f7-9f83-9a048dbca673-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "89.77",
+                                                    "@baseRate": "89.77"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "89.77",
+                                                    "@baseRate": "89.77"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "101.00",
+                                                    "@baseRate": "101.00"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "101.00",
+                                        "@surchargeTotal": "19.08",
+                                        "@commissionableUsdTotal": "190.77",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "19.08",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "190.77",
+                                        "@total": "209.85",
+                                        "@averageBaseRate": "95.38",
+                                        "@averageRate": "95.38",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207511491,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 2048,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98516,
+                    "address1": "3F, 21-7, Myeongdong 8gil, Jung-gu",
+                    "highRate": 101.0,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 89.77,
+                    "hotelId": 588991,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;Located in Seoul (Jung-gu), K-Grand Hostel Myeongdong is minutes from Myeongdong Cathedral and Lotte Department Store.  This guesthouse is close to Gyeongbok Palace",
+                    "proximityDistance": 1.1274037,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/588991/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/16000000/15030000/15021600/15021550/15021550_34_t.jpg",
+                    "name": "K-Grand Hostel Myeongdong",
+                    "airportCode": "GMP",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 3.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 4,
+                    "postalCode": 135915,
+                    "locationDescription": "Near Seonjeongneung Royal Tombs",
+                    "latitude": 37.50252,
+                    "@order": "10",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201039251,
+                            "expediaPropertyId": 9445668,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Standard Double Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Continental Breakfast for 2",
+                                        "@id": "2193"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 2,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "864598a4-a98e-4477-b5fc-94d4ca724134-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "101.76",
+                                                    "@baseRate": "290.75"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "111.58",
+                                                    "@baseRate": "318.80"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 214362227,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "101.76",
+                                                    "@baseRate": "290.75"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "111.58",
+                                                    "@baseRate": "318.80"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "111.58",
+                                        "@surchargeTotal": "44.79",
+                                        "@commissionableUsdTotal": "213.34",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "44.79",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "213.34",
+                                        "@total": "258.13",
+                                        "@averageBaseRate": "304.78",
+                                        "@averageRate": "106.67",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 65%"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 205065230,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 1067009,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.03851,
+                    "address1": "12, Teheran-ro 29-gil, Gangnam-gu",
+                    "highRate": 318.8,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 101.76,
+                    "hotelId": 481021,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at H Avenue Hotel in Seoul (Gangnam), you\u0026apos;ll be convenient to Kukkiwon and COEX Convention and Exhibition Center.  This hotel is within close proximity",
+                    "proximityDistance": 5.559506,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/481021/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/10000000/9450000/9445700/9445668/9445668_39_t.jpg",
+                    "name": "H Avenue Hotel",
+                    "airportCode": "GMP",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 3.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 56,
+                    "postalCode": 135880,
+                    "locationDescription": "Near COEX Convention and Exhibition Center",
+                    "latitude": 37.5085,
+                    "@order": "11",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201382311,
+                            "expediaPropertyId": 12465357,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Urban Double Room- Bathtub Included",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 2,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "92753aa2-4e39-4b92-8a46-5b4363c8cf3f-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "203.68",
+                                                    "@baseRate": "203.68"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "203.68",
+                                                    "@baseRate": "203.68"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "203.68",
+                                                    "@baseRate": "203.68"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "203.68",
+                                                    "@baseRate": "203.68"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "203.68",
+                                        "@surchargeTotal": "40.74",
+                                        "@commissionableUsdTotal": "407.36",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "40.74",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "407.36",
+                                        "@total": "448.10",
+                                        "@averageBaseRate": "203.68",
+                                        "@averageRate": "203.68",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 206820137,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 1196299,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.05867,
+                    "address1": "9, Teheran-ro 87-gil, Gangnam-gu",
+                    "highRate": 203.68,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 203.68,
+                    "hotelId": 550529,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Hotel Peyto Samseong in Seoul (COEX), you\u0026apos;ll be minutes from COEX Convention and Exhibition Center and COEX Mall.  This hotel is within close",
+                    "proximityDistance": 6.1623626,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/550529/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/13000000/12470000/12465400/12465357/12465357_32_t.jpg",
+                    "name": "Hotel Peyto Samseong",
+                    "airportCode": "ICN",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 30,
+                    "postalCode": "110-320",
+                    "locationDescription": "Near Jogyesa Temple",
+                    "latitude": 37.57123,
+                    "@order": "12",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200986410,
+                            "expediaPropertyId": 10345475,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Standard Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Parking",
+                                        "@id": "2109"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 6,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "a0b8ed5f-8d0d-4225-a357-dd8e65faadb2-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "84.17",
+                                                    "@baseRate": "112.22"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "117.83",
+                                                    "@baseRate": "157.11"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 209571850,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "84.17",
+                                                    "@baseRate": "112.22"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "117.83",
+                                                    "@baseRate": "157.11"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "117.83",
+                                        "@surchargeTotal": "20.19",
+                                        "@commissionableUsdTotal": "202.00",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "20.19",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "202.00",
+                                        "@total": "222.19",
+                                        "@averageBaseRate": "134.66",
+                                        "@averageRate": "101.00",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 25%"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 204812021,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 8,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98924,
+                    "address1": "7, Supyo-ro 22-gil, Jongno-gu",
+                    "highRate": 157.11,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 84.17,
+                    "hotelId": 506040,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Hotel Amare in Seoul (Jongno), you\u0026apos;ll be convenient to Jongmyo Shrine and Gyeongbok Palace.  This hotel is within close proximity of Jogyesa Temple",
+                    "proximityDistance": 1.5849779,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/506040/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/11000000/10350000/10345500/10345475/e8b38f31_t.jpg",
+                    "name": "Hotel Amare",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 52,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 57,
+                    "postalCode": "120-809",
+                    "locationDescription": "In Seoul (Seodaemun-gu)",
+                    "latitude": 37.55794,
+                    "@order": "13",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200291502,
+                            "expediaPropertyId": 6098609,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Double Room, Private Bathroom",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Breakfast Buffet",
+                                        "@id": "2205"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 2,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "a0a51688-1aae-4280-82e5-0fa2d34e172b-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "48.10",
+                                                    "@baseRate": "60.12"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "64.13",
+                                                    "@baseRate": "80.16"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 214465642,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "48.10",
+                                                    "@baseRate": "60.12"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "64.13",
+                                                    "@baseRate": "80.16"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "64.13",
+                                        "@surchargeTotal": "23.56",
+                                        "@commissionableUsdTotal": "112.23",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "23.56",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "112.23",
+                                        "@total": "135.79",
+                                        "@averageBaseRate": "70.14",
+                                        "@averageRate": "56.12",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 20%"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207610120,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 2056,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.94411,
+                    "address1": "29, Ewhayeodae 3-gil, Seodaemun-gu",
+                    "highRate": 80.16,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 48.1,
+                    "hotelId": 432090,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Shinchon Hostel in Seoul (Seodaemun-gu), you\u0026apos;ll be close to Yeonsei University and Gyeongbok Palace.  This hostel is within close proximity of Hongik",
+                    "proximityDistance": 1.165421,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/432090/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/7000000/6100000/6098700/6098609/6098609_8_t.jpg",
+                    "name": "Shinchon Hostel",
+                    "airportCode": "SEL",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 3.0,
+                    "city": "Seoul",
+                    "locationDescription": "In Seoul (Seocho-gu)",
+                    "latitude": 37.48707,
+                    "@order": "14",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/0.0-123456-4.gif",
+                    "tripAdvisorRating": 0.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201485146,
+                            "expediaPropertyId": 13503453,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Standard Double Room (Main Tower)",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "3",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Valet Parking",
+                                        "@id": "2195"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Breakfast",
+                                        "@id": "1073742786"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 7,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "16d4aa7c-0c5a-46a5-95ff-a0b512ada2ee-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "84.16",
+                                                    "@baseRate": "140.27"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "122.04",
+                                                    "@baseRate": "162.72"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 221050587,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "84.16",
+                                                    "@baseRate": "140.27"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "122.04",
+                                                    "@baseRate": "162.72"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "122.04",
+                                        "@surchargeTotal": "20.62",
+                                        "@commissionableUsdTotal": "206.20",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "20.62",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "206.20",
+                                        "@total": "226.82",
+                                        "@averageBaseRate": "151.50",
+                                        "@averageRate": "103.10",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Book now and save!"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207413391,
+                            "minGuestAge": 5
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 1064968,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.0123,
+                    "address2": "Seocho-gu",
+                    "address1": "40 Banpo daero 18-gil",
+                    "highRate": 162.72,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 84.16,
+                    "hotelId": 573942,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;A stay at E-HOTEL places you in the heart of Seoul, convenient to Seoul Arts Center and COEX Convention and Exhibition Center.  This hotel is within close proximity",
+                    "proximityDistance": 5.551386,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/573942/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/14000000/13510000/13503500/13503453/754eee29_t.jpg",
+                    "name": "E-HOTEL",
+                    "airportCode": "ICN",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 3.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 4,
+                    "postalCode": "135-091",
+                    "locationDescription": "Near COEX Convention and Exhibition Center",
+                    "latitude": 37.50938,
+                    "@order": "15",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-123456-4.gif",
+                    "tripAdvisorRating": 3.5,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201458184,
+                            "expediaPropertyId": 14728168,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Standard Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "3",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Parking",
+                                        "@id": "2109"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Continental Breakfast",
+                                        "@id": "2103"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 4,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "312b1c91-9d1c-408c-8bb5-a6ef81cf1bd8-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "111.10",
+                                                    "@baseRate": "111.10"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "111.10",
+                                        "@surchargeTotal": "22.22",
+                                        "@commissionableUsdTotal": "222.20",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "22.22",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "222.20",
+                                        "@total": "244.42",
+                                        "@averageBaseRate": "111.10",
+                                        "@averageRate": "111.10",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207262573,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 134236160,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.06455,
+                    "address1": "611, Teheran-ro, Gangnam-gu",
+                    "highRate": 111.1,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 111.1,
+                    "hotelId": 577037,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Boutique Hotel XYM in Seoul (COEX), you\u0026apos;ll be minutes from COEX Mall and close to COEX Convention and Exhibition Center.  This hotel is within close",
+                    "proximityDistance": 6.400071,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/577037/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/15000000/14730000/14728200/14728168/14728168_3_t.jpg",
+                    "name": "Boutique Hotel XYM",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 1,
+                    "postalCode": "03983",
+                    "locationDescription": "In Seoul (Hongdae)",
+                    "latitude": 37.56298,
+                    "@order": "16",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201590587,
+                            "expediaPropertyId": 15666998,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Deluxe Twin Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Continental Breakfast",
+                                        "@id": "2103"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "promoType": "Standard",
+                                    "@rateChange": "true",
+                                    "@promo": "true",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "c86e9c8b-e903-4156-8e49-bae9767a932b-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "55.21",
+                                                    "@baseRate": "67.33"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "72.94",
+                                                    "@baseRate": "72.94"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "promoId": 221597822,
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "true",
+                                                    "@rate": "55.21",
+                                                    "@baseRate": "67.33"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "72.94",
+                                                    "@baseRate": "72.94"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "72.94",
+                                        "@surchargeTotal": "12.81",
+                                        "@commissionableUsdTotal": "128.15",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "12.81",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "128.15",
+                                        "@total": "140.96",
+                                        "@averageBaseRate": "70.14",
+                                        "@averageRate": "64.08",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    },
+                                    "promoDescription": "Save 18% (on select nights)"
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207997744,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 2048,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.92434,
+                    "address1": "3-6, Donggyo-ro 45-gil, Mapo-gu",
+                    "highRate": 72.94,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 55.21,
+                    "hotelId": 608493,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Hi Jun Guest House 2 - Hostel in Seoul (Hongdae), you\u0026apos;ll be close to Trickeye Museum and Gyeongbok Palace.  This hostel is within close proximity of",
+                    "proximityDistance": 2.2715082,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/608493/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/16000000/15670000/15667000/15666998/4415c4f9_t.jpg",
+                    "name": "Hi Jun Guest House 2 - Hostel",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 52,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 69,
+                    "postalCode": "100-809",
+                    "locationDescription": "Near Sungnyemun Gate",
+                    "latitude": 37.56286,
+                    "@order": "17",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 200214340,
+                            "expediaPropertyId": 5421309,
+                            "maxRoomOccupancy": 3,
+                            "roomDescription": "Triple Room (Pull Out Bed)",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "2",
+                                "ValueAdd": {
+                                  "myArrayList": [
+                                    {
+                                      "map": {
+                                        "description": "Free Wireless Internet",
+                                        "@id": "2192"
+                                      }
+                                    },
+                                    {
+                                      "map": {
+                                        "description": "Continental Breakfast",
+                                        "@id": "2103"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "2c26657b-1b8c-4ba9-a7bb-960f81d78a0c-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "73.45",
+                                                    "@baseRate": "73.45"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "90.80",
+                                                    "@baseRate": "90.80"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "73.45",
+                                                    "@baseRate": "73.45"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "90.80",
+                                                    "@baseRate": "90.80"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "90.80",
+                                        "@surchargeTotal": "34.49",
+                                        "@commissionableUsdTotal": "164.25",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "34.49",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "164.25",
+                                        "@total": "198.74",
+                                        "@averageBaseRate": "82.12",
+                                        "@averageRate": "82.12",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 207413455,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 2056,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.98585,
+                    "address1": "35-20, Myeongdong 10-gil, Jung-gu",
+                    "highRate": 90.8,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 73.45,
+                    "hotelId": 419208,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at K-Pop Residence Myeong Dong II, you\u0026apos;ll be centrally located in Seoul, steps from Myeongdong Cathedral and minutes from Lotte Department Store.  This",
+                    "proximityDistance": 1.1654516,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/419208/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/6000000/5430000/5421400/5421309/5421309_36_t.jpg",
+                    "name": "K-Pop Residence Myeong Dong II",
+                    "airportCode": "ICN",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 52,
+                    "hotelRating": 2.5,
+                    "city": "Seoul",
+                    "postalCode": "110-842",
+                    "locationDescription": "Near Dongdaemun Market",
+                    "latitude": 37.57094,
+                    "@order": "18",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/0.0-123456-4.gif",
+                    "tripAdvisorRating": 0.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 409455,
+                            "expediaPropertyId": 907525,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Standard Double Room - No Meal",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "ValueAdds": {
+                              "map": {
+                                "@size": "1",
+                                "ValueAdd": {
+                                  "map": {
+                                    "description": "Free Wireless Internet",
+                                    "@id": "2192"
+                                  }
+                                }
+                              }
+                            },
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 7,
+                                    "@rateChange": "false",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "b3c27c31-7748-4533-9f64-75175cfd865e-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "70.81",
+                                                    "@baseRate": "70.81"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "70.81",
+                                                    "@baseRate": "70.81"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "70.81",
+                                                    "@baseRate": "70.81"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "70.81",
+                                                    "@baseRate": "70.81"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "70.81",
+                                        "@surchargeTotal": "29.74",
+                                        "@commissionableUsdTotal": "141.62",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "29.74",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "141.62",
+                                        "@total": "171.36",
+                                        "@averageBaseRate": "70.81",
+                                        "@averageRate": "70.81",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 1406677,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 257,
+                    "propertyCategory": 1,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 127.01024,
+                    "address1": "286, Jong-ro, Jongno-gu",
+                    "highRate": 70.81,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 70.81,
+                    "hotelId": 205897,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Dongdaemun Hotel in Seoul (Jongno), you\u0026apos;ll be minutes from Dongdaemun Market and close to Gyeongbok Palace.  This hotel is within close proximity of",
+                    "proximityDistance": 2.6086085,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/205897/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/1000000/910000/907600/907525/907525_22_t.jpg",
+                    "name": "Dongdaemun Hotel",
+                    "airportCode": "ICN",
+                    "supplierType": "E"
+                  }
+                },
+                {
+                  "map": {
+                    "confidenceRating": 0,
+                    "hotelRating": 2.0,
+                    "city": "Seoul",
+                    "tripAdvisorReviewCount": 1,
+                    "postalCode": "03984",
+                    "locationDescription": "In Seoul (Hongdae)",
+                    "latitude": 37.56245,
+                    "@order": "19",
+                    "@ubsScore": "0",
+                    "proximityUnit": "MI",
+                    "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-123456-4.gif",
+                    "tripAdvisorRating": 4.0,
+                    "hotelInDestination": true,
+                    "countryCode": "KR",
+                    "RoomRateDetailsList": {
+                      "map": {
+                        "RoomRateDetails": {
+                          "map": {
+                            "roomTypeCode": 201346461,
+                            "expediaPropertyId": 12830868,
+                            "maxRoomOccupancy": 2,
+                            "roomDescription": "Deluxe Double Room",
+                            "propertyRestricted": false,
+                            "quotedRoomOccupancy": 2,
+                            "RateInfos": {
+                              "map": {
+                                "@size": "1",
+                                "RateInfo": {
+                                  "map": {
+                                    "rateType": "MerchantStandard",
+                                    "@priceBreakdown": "true",
+                                    "currentAllotment": 1,
+                                    "@rateChange": "true",
+                                    "@promo": "false",
+                                    "RoomGroup": {
+                                      "map": {
+                                        "Room": {
+                                          "map": {
+                                            "rateKey": "a365f214-e1ed-4104-b797-ae781dd75d43-5206",
+                                            "ChargeableNightlyRates": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "61.72",
+                                                    "@baseRate": "61.72"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "67.33",
+                                                    "@baseRate": "67.33"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "numberOfChildren": 0,
+                                            "numberOfAdults": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "nonRefundable": false,
+                                    "ChargeableRateInfo": {
+                                      "map": {
+                                        "NightlyRatesPerRoom": {
+                                          "map": {
+                                            "@size": "2",
+                                            "NightlyRate": {
+                                              "myArrayList": [
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "61.72",
+                                                    "@baseRate": "61.72"
+                                                  }
+                                                },
+                                                {
+                                                  "map": {
+                                                    "@promo": "false",
+                                                    "@rate": "67.33",
+                                                    "@baseRate": "67.33"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "@maxNightlyRate": "67.33",
+                                        "@surchargeTotal": "12.90",
+                                        "@commissionableUsdTotal": "129.05",
+                                        "Surcharges": {
+                                          "map": {
+                                            "Surcharge": {
+                                              "map": {
+                                                "@amount": "12.90",
+                                                "@type": "TaxAndServiceFee"
+                                              }
+                                            },
+                                            "@size": "1"
+                                          }
+                                        },
+                                        "@nightlyRateTotal": "129.05",
+                                        "@total": "141.95",
+                                        "@averageBaseRate": "64.52",
+                                        "@averageRate": "64.52",
+                                        "@currencyCode": "SGD"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "propertyAvailable": true,
+                            "rateCode": 206553458,
+                            "minGuestAge": 0
+                          }
+                        }
+                      }
+                    },
+                    "amenityMask": 134236160,
+                    "propertyCategory": 5,
+                    "hotelRatingDisplay": "Star",
+                    "longitude": 126.92382,
+                    "address1": "4-7, Donggyo-ro 39-gil, Mapo-gu",
+                    "highRate": 67.33,
+                    "rateCurrencyCode": "SGD",
+                    "lowRate": 61.72,
+                    "hotelId": 559508,
+                    "shortDescription": "\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Property Location\u0026lt;/b\u0026gt; \u0026lt;br /\u0026gt;With a stay at Campfire Guesthouse in Seoul (Hongdae), you\u0026apos;ll be convenient to Trickeye Museum and Yeonsei University.  This guesthouse is within close proximity of",
+                    "proximityDistance": 2.2947383,
+                    "deepLink": "http://www.travelnow.com/templates/461872/hotels/559508/overview?lang\u003den\u0026amp;currency\u003dSGD\u0026amp;standardCheckin\u003d11/10/2016\u0026amp;standardCheckout\u003d11/12/2016\u0026amp;roomsCount\u003d1\u0026amp;rooms[0].adultsCount\u003d2",
+                    "thumbNailUrl": "/hotels/13000000/12840000/12830900/12830868/12830868_11_t.jpg",
+                    "name": "Campfire Guesthouse",
+                    "supplierType": "E"
+                  }
+                }
+              ]
+            },
+            "@size": "20",
+            "@activePropertyCount": "1054"
+          }
+        },
+        "customerSessionId": "0ABAAA47-1B93-AF91-57E2-16BC6DE93F37",
+        "cacheLocation": "10.186.170.71:7300",
+        "cachedSupplierResponse": {
+          "map": {
+            "@tpidUsed": "5206",
+            "@otherOverheadTime": "1328",
+            "@candidatePreptime": "36",
+            "@matchedCurrency": "true",
+            "@supplierCacheTolerance": "NOT_SUPPORTED",
+            "@cachedTime": "0",
+            "@matchedLocale": "true"
+          }
+        },
+        "moreResultsAvailable": true
+      }
+    }
+  }
+}
