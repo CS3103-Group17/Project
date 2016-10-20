@@ -68,5 +68,10 @@
 			<artifactId>controlsfx</artifactId>
 			<version>8.40.12</version>
 		</dependency>
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>4.0.4</version>
+		</dependency>
 	</dependencies>
 </project>
