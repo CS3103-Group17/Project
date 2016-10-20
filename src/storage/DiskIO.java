@@ -23,13 +23,13 @@ import java.util.logging.Logger;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
-public class Storage {
+public class DiskIO {
 	private File saveFile;
 	private GsonBuilder builder;
 	private Gson gson;
-	private static final Logger logger = Logger.getLogger(Storage.class.getName());
+	private static final Logger logger = Logger.getLogger(DiskIO.class.getName());
 
-	public Storage() {
+	public DiskIO() {
 		builder = new GsonBuilder().setPrettyPrinting();
 		/*builder.registerTypeAdapter(ObjectProperty.class, new PropertyTypeAdapter());
 		builder.registerTypeAdapter(StringProperty.class, new PropertyTypeAdapter());

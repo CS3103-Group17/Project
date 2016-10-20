@@ -9,34 +9,29 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import model.Cities;
 import model.Page;
 import storage.Storage;
 
 public class WikitravelController {
-		private ArrayList<Page> history;
-		private Cities cities;
 		private WikitravelCrawler wc;
 		private Storage s;
-
-		public WikitravelController(){
-			history = new ArrayList<Page>();
-			cities = new Cities();
+		
+		public WikitravelController(Storage s){
 			wc = new WikitravelCrawler();
-			s = new Storage();
+			this.s = s;
 		}
 		
 		public void parseCategory(){
 			ArrayList<Page> pageList = getPages(2);
 			
 			for(Page p : pageList){
-				cities.addCity(wc.parsePage(p));
-				history.add(p);
+				s.addCity(wc.parsePage(p));
+				s.addToHistory(p);
 			}
 			
 			pageList.clear();
 			
-			s.save(cities);
+			s.save();
 			
 		}
 		
@@ -67,9 +62,5 @@ public class WikitravelController {
 			}
 			
 			return pages;
-		}
-		
-		public Cities getCities(){
-			return cities;
 		}
 }

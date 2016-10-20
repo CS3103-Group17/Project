@@ -1,7 +1,5 @@
 package ui;
 
-import com.sun.glass.events.MouseEvent;
-
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -19,6 +17,7 @@ import model.Cities;
 import model.City;
 import model.ImageData;
 import model.Section;
+import storage.Storage;
 import wikitravel.WikitravelController;
 
 public class MainViewController {
@@ -30,6 +29,7 @@ public class MainViewController {
 	
 	private WikitravelController wtCon;
 	private WebEngine centerWebEngine;
+	private Storage s;
 	
 	private final double WINDOW_WIDTH = 1000.0;
 	private final double WINDOW_HEIGHT = 600.0;
@@ -38,9 +38,10 @@ public class MainViewController {
 
 	// @@author A0139963N
 	public MainViewController() {
-		wtCon = new WikitravelController();
+		s = new Storage();
+		wtCon = new WikitravelController(s);
 		wtCon.parseCategory();
-		cities = wtCon.getCities();
+		cities = s.getCities();
 	}
 
 	public BorderPane initialize(Stage primaryStage) {

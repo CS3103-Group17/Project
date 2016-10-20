@@ -9,13 +9,13 @@ import org.junit.Test;
 import model.Cities;
 import model.City;
 import model.Section;
-import storage.Storage;
+import storage.DiskIO;
 
 public class StorageTest {
 
 	@Test
 	public void test() {
-		Storage store = new Storage();
+		DiskIO store = new DiskIO();
 		Cities cities = new Cities();
 		City c = new City();
 		c.addSection(new Section("Getting Around", "1", 1));
