@@ -1,50 +1,47 @@
-package model;
+package socialdata;
 
-import java.util.ArrayList;
-
-public class Tweet {
-
-	private String tweet;
-	private String username;
-	private String date;
-	private ArrayList<String> images;
+public class socialData {
 	
-	public Tweet(String tweet, String username, String date){
-		setTweet(tweet);
-		setUsername(username);
-		setDate(date);
-		images = new ArrayList<String>();
+	private int ID;
+	private String userHandle;
+	private String text;
+	private MediaType mediaType;
+	private String mediaURL;
+	
+	/**
+	 * create a new social post data set
+	 * @param ID - unique identifier for the post 
+	 * @param userHandle - user name who created the post
+	 * @param text - text content of the post
+	 * @param mediaType - enum to identify post media type
+	 * @param mediaURL - URL of media
+	 */
+	public socialData(int ID, String userHandle, String text, MediaType mediaType, String mediaURL){
+		this.ID = ID;
+		this.userHandle = userHandle;
+		this.text = text;
+		this.mediaType = mediaType;
+		this.mediaURL = mediaURL;
 	}
-
-	public String getTweet() {
-		return tweet;
+	
+	public int getID(){
+		return ID;
 	}
-
-	public void setTweet(String tweet) {
-		this.tweet = tweet;
+	
+	public String getUserHandle() {
+		return userHandle;
 	}
-
-	public String getUsername() {
-		return username;
+	public String getText() {
+		return text;
 	}
-
-	public void setUsername(String username) {
-		this.username = username;
+	public String getMediaURL() {
+		return mediaURL;
 	}
-
-	public String getDate() {
-		return date;
+	public MediaType getMediaType() {
+		return mediaType;
 	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public ArrayList<String> getImages() {
-		return images;
-	}
-
-	public void addImage(String image) {
-		images.add(image);
+	
+	public enum MediaType{
+		NONE, URL, IMAGE, VIDEO	
 	}
 }
