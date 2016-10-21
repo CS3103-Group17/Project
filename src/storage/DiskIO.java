@@ -15,16 +15,19 @@ import com.google.gson.reflect.TypeToken;
 
 import model.Cities;
 import model.City;
+import model.History;
+import model.Page;
 
 import java.lang.reflect.Type;
-
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
 public class DiskIO {
-	private File saveFile;
+	private File citiesSaveFile;
+	private File historySaveFile;
 	private GsonBuilder builder;
 	private Gson gson;
 	private static final Logger logger = Logger.getLogger(DiskIO.class.getName());
@@ -36,24 +39,31 @@ public class DiskIO {
 		builder.registerTypeAdapter(IntegerProperty.class, new PropertyTypeAdapter());
 		builder.registerTypeAdapter(BooleanProperty.class, new PropertyTypeAdapter());*/
 		gson = builder.create();
-		setSaveFile("storage.json");
+		setSaveFile("storage");
+	}
+	
+	public DiskIO(String filename) {
+		builder = new GsonBuilder().setPrettyPrinting();
+		gson = builder.create();
+		setSaveFile(filename);
 	}
 
 	// Sets save file to be used for saving/loading
 	public void setSaveFile(String saveFileName) {
-		saveFile = new File(saveFileName);
+		citiesSaveFile = new File(saveFileName+"city.json");
+		historySaveFile = new File(saveFileName+"history.json");
 	}
 
 	// Return save file
-	public File getSaveFile() {
-		return saveFile;
+	public File getCitiesSaveFile() {
+		return citiesSaveFile;
 	}
 
-	public Cities load() {
+	public Cities loadCities() {
 		BufferedReader reader = null;
 		try {
 			// Reads data from file
-			reader = new BufferedReader(new FileReader(saveFile));
+			reader = new BufferedReader(new FileReader(citiesSaveFile));
 			// Converts read data back into Java types
 			return gson.fromJson(reader, Cities.class);
 		} catch (Exception e) {
@@ -69,16 +79,39 @@ public class DiskIO {
 			}
 		}
 	}
+	
 
-	public boolean save(Cities cities) {
-		String dataListsJSON = gson.toJson(cities);
+	public History loadHistory() {
+		BufferedReader reader = null;
+		try {
+			// Reads data from file
+			reader = new BufferedReader(new FileReader(historySaveFile));
+			// Converts read data back into Java types
+			return gson.fromJson(reader, History.class);
+		} catch (Exception e) {
+			return new History();
+		} finally {
+			try {
+				if (reader != null) {
+					reader.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 
-		return writeJSONToFile(dataListsJSON, saveFile);
+	public boolean save(Cities cities, History history) {
+		String citiesJSON = gson.toJson(cities);
+		String historyJSON = gson.toJson(history);
+
+		return writeJSONToFile(citiesJSON, citiesSaveFile) && writeJSONToFile(historyJSON, historySaveFile);
 	}
 
     private boolean writeJSONToFile(String jsonString, File file) {
     	assert jsonString != null;
-    	logger.entering("JoltStorage", "writeJSONToFile", new Object[] { jsonString, file });
+    	logger.entering("Travel Crawler", "writeJSONToFile", new Object[] { jsonString, file });
         try {
             // Create new file if it doesn't exist
             if (!file.exists()) {
@@ -103,6 +136,6 @@ public class DiskIO {
 	}
     
     public boolean deleteFile(){
-    	return saveFile.delete();
+    	return citiesSaveFile.delete() && historySaveFile.delete();
     }
 }

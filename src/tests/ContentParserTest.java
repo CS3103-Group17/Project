@@ -28,5 +28,15 @@ public class ContentParserTest {
 		
 		assertEquals(expectedOutput, cp.parseSectionContent(s));
 	}
+	
+	@Test
+	public void parseSearchKeywordTest(){
+		ContentParser cp = new ContentParser();
+		
+		String s = "San Francisco";
+			
+		System.out.println(cp.parseSearchKeyword(s));
+		//assertEquals(expectedOutput, cp.parseSectionContent(s));
+	}
 
 }

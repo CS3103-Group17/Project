@@ -1,6 +1,6 @@
-package socialdata;
+package model;
 
-public class socialData {
+public class Tweet {
 	
 	private int ID;
 	private String userHandle;
@@ -16,7 +16,7 @@ public class socialData {
 	 * @param mediaType - enum to identify post media type
 	 * @param mediaURL - URL of media
 	 */
-	public socialData(int ID, String userHandle, String text, MediaType mediaType, String mediaURL){
+	public Tweet(int ID, String userHandle, String text, MediaType mediaType, String mediaURL){
 		this.ID = ID;
 		this.userHandle = userHandle;
 		this.text = text;
