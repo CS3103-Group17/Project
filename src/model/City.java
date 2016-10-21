@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class City {
 	private String name;
 	private String summaryContent;
+	private String googleTrendsHTML;
 	private ArrayList<Section> sections;
 	private ArrayList<ImageData> images;
 	private ArrayList<TweetData> tweets;
@@ -12,6 +13,7 @@ public class City {
 	public City(){
 		setName("");
 		setSummaryContent("");
+		setGoogleTrendsHTML("");
 		setSections(new ArrayList<Section>());
 		setImages(new ArrayList<ImageData>());
 		tweets = new ArrayList<TweetData>();
@@ -20,6 +22,7 @@ public class City {
 	public City(String name){
 		setName(name);
 		setSummaryContent("");
+		setGoogleTrendsHTML("");
 		setSections(new ArrayList<Section>());
 		setImages(new ArrayList<ImageData>());
 		tweets = new ArrayList<TweetData>();
@@ -74,6 +77,14 @@ public class City {
 	public void addImage(ImageData image){
 		images.add(image);
 	}
+	
+	public void addImages(ArrayList<ImageData> imageDatas){
+		
+		for(ImageData id : imageDatas){
+			images.add(id);
+		}
+		
+	}
 
 	public ArrayList<TweetData> getTweets() {
 		return tweets;
@@ -81,5 +92,13 @@ public class City {
 
 	public void addTweet(TweetData tweet) {
 		tweets.add(tweet);
+	}
+
+	public String getGoogleTrendsHTML() {
+		return googleTrendsHTML;
+	}
+
+	public void setGoogleTrendsHTML(String googleTrendsHTML) {
+		this.googleTrendsHTML = googleTrendsHTML;
 	}
 }

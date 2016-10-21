@@ -36,6 +36,13 @@ public class LeftPaneController {
 		
         for (City city : cities.getCities()) {
         	TreeItem<String> cityItem = new TreeItem<> (city.getName());
+        	
+        	TreeItem<String> trendItem = new TreeItem<> ("Trend");
+            cityItem.getChildren().add(trendItem);
+            
+        	TreeItem<String> galleryItem = new TreeItem<> ("Gallery");
+            cityItem.getChildren().add(galleryItem);
+            
         	cityItem.setExpanded(true);
         	for (Section s : city.getSections()) {
                 TreeItem<String> sectionItem = new TreeItem<> (s.getName());
@@ -63,9 +70,20 @@ public class LeftPaneController {
                     
                     if(treeItem.isLeaf()){
                     	City c = cities.findCity(treeItem.getParent().getValue());
-                    	Section s = c.findSection(treeItem.getValue());
                     	
-                    	mvc.changeCenterContent(s);
+                    	String val = treeItem.getValue();
+                    	if(val.equals("Trend")){
+                    		mvc.loadTrendHTML(c.getGoogleTrendsHTML());
+                    	}
+                    	else if (val.equals("Trend")){
+                    		
+                    	}
+                    	else {
+                    		Section s = c.findSection(val);
+                        	
+                        	mvc.changeCenterContent(s);
+                    	}
+                    	
                     }
                     else {
                     	City c = cities.findCity(treeItem.getValue());

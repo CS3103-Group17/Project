@@ -1,41 +1,33 @@
 package ui;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TreeCell;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import model.Cities;
-import model.City;
-import model.ImageData;
+import main.DataController;
 import model.Section;
 import storage.Storage;
-import wikitravel.WikitravelController;
 
 public class MainViewController {
 
 	private BorderPane mainPane;
 	private BorderPane topPane;
 	private StackPane leftPane;
-	private ScrollPane centerPane;
+	private WebEngine centerWebEngine;
 	
 	private TopPaneController topCon;
 	private LeftPaneController leftCon;
 	
-	private WikitravelController wtCon;
-	private WebEngine centerWebEngine;
+	private DataController dataCon;
 	
 	private final double WINDOW_WIDTH = 1000.0;
 	private final double WINDOW_HEIGHT = 600.0;
 
 	// @@author A0139963N
 	public MainViewController(Storage s) {
-		wtCon = new WikitravelController(s);
+		dataCon = new DataController(s);
 		//wtCon.parseCategory();
 		
 		topCon = new TopPaneController(this);
@@ -91,7 +83,7 @@ public class MainViewController {
 	}
 	
 	public void search(String keyword){
-		wtCon.searchPage(keyword);
+		dataCon.searchPage(keyword);
 		setUpLeftPane();
 	}
 	
@@ -101,5 +93,13 @@ public class MainViewController {
 	
 	public void changeCenterContent(String s){
 		centerWebEngine.loadContent(s);
+	}
+	
+	public void loadTrendHTML(String html){
+		centerWebEngine.loadContent(html);
+	}
+	
+	public void loadGallery(String html){
+		centerWebEngine.loadContent(html);
 	}
 }

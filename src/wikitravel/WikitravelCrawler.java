@@ -14,39 +14,16 @@ import model.Section;
 import utils.ContentParser;
 
 public class WikitravelCrawler {
-
-	private ContentParser cp;
 	
-	public WikitravelCrawler(){
-		cp = new ContentParser();
-	}
+	private final int TIMEOUT_DURATION = 0;
 	
 	public City parsePage(Page page){
-		if(page.getPageID() != -1){
-			City city = new City(page.getPageTitle());
-			getCitySummaryByPageID(page.getPageID(), city);
-			ArrayList<Section> sections = getSectionsByPageID(page.getPageID());
-			for(Section s : sections){
-				if(!getSectionContentByPageID(page.getPageID(), s))
-					sections.remove(s);
-			}
-			
-			city.setSections(sections);
-			
-			return city;
-		}
-		else {
-			return parsePage(page.getPageTitle());
-		}
-	}
-	
-	public City parsePage(String pageTitle){
-		City city = new City(pageTitle);
-		pageTitle = pageTitle.replace(" ", "%20");
+		City city = new City(page.getPageTitle());
+		String pageTitle = page.getPageTitle().replace(" ", "%20");
 		getCitySummaryByPageTitle(pageTitle, city);
-		ArrayList<Section> sections = getSectionsByPageTitle(pageTitle);
+		ArrayList<Section> sections = getSections(pageTitle);
 		for(Section s : sections){
-			if(!getSectionContentByPageTitle(pageTitle, s))
+			if(!getSectionContent(pageTitle, s))
 				sections.remove(s);
 		}
 		
@@ -55,25 +32,48 @@ public class WikitravelCrawler {
 		return city;
 	}
 	
-	public ArrayList<Section> getSectionsByPageTitle(String pageTitle){
-		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&prop=sections&page="+pageTitle;
-		return getSections(url);
-	}
-	
-	public ArrayList<Section> getSectionsByPageID(int pageID){
-		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&prop=sections&pageid="+pageID;
-		return getSections(url);
-	}
-	
-	public ArrayList<Section> getSections(String url){
-		ArrayList<Section> sectionsList = new ArrayList<Section>();
+	public ArrayList<Page> getSearch(String keyword){
+		ArrayList<Page> pages = new ArrayList<Page>();
+		keyword = ContentParser.encodeIntoURL(keyword);
+		
+		String url = "http://wikitravel.org/wiki/en/api.php?action=opensearch&search="+keyword+"&limit=100&namespace=0&format=xml";
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
 					  .data("query", "Java")
 					  .userAgent("Mozilla")
 					  .cookie("auth", "token")
-					  .timeout(3000)
+					  .timeout(TIMEOUT_DURATION)
+					  .post();
+			
+			Iterator<Element> sections = doc.select("Text").iterator();
+			while(sections.hasNext()){
+				Element pageCon = sections.next();
+				Page page = new Page(pageCon.html());
+				pages.add(page);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			System.out.println("Couldn't search for keywords");
+		}
+		
+		return pages;
+	}
+	
+	public ArrayList<Section> getSections(String pageTitle){
+		ArrayList<Section> sectionsList = new ArrayList<Section>();
+		pageTitle = ContentParser.encodeIntoURL(pageTitle);
+		
+		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&prop=sections&page="+pageTitle;
+		
+		Document doc;
+		try {
+			doc = Jsoup.connect(url)
+					  .data("query", "Java")
+					  .userAgent("Mozilla")
+					  .cookie("auth", "token")
+					  .timeout(TIMEOUT_DURATION)
 					  .post();
 			
 			Iterator<Element> sections = doc.select("s").iterator();
@@ -92,24 +92,18 @@ public class WikitravelCrawler {
 		return sectionsList;
 	}
 	
-	public boolean getSectionContentByPageTitle(String pageTitle, Section section){
+	public boolean getSectionContent(String pageTitle, Section section){
+		pageTitle = ContentParser.encodeIntoURL(pageTitle);
+		
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&page="+pageTitle+"&section="+section.getIndex();
-		return getSectionContent(url, section);
-	}
-	
-	public boolean getSectionContentByPageID(int pageID, Section section){
-		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&pageid="+pageID+"&section="+section.getIndex();
-		return getSectionContent(url, section);
-	}
-	
-	public boolean getSectionContent(String url, Section section){
+		
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
 					  .data("query", "Java")
 					  .userAgent("Mozilla")
 					  .cookie("auth", "token")
-					  .timeout(3000)
+					  .timeout(TIMEOUT_DURATION)
 					  .post();
 			
 			Iterator<Element> sections = doc.select("text").iterator();
@@ -120,7 +114,7 @@ public class WikitravelCrawler {
 				if(sectionCon.html().equals(""))
 					return false;
 				else
-					sectionContent = cp.parseSectionContent(sectionCon.html());
+					sectionContent = ContentParser.parseSectionContent(sectionCon.html());
 			}
 			
 			section.setContent(sectionContent);
@@ -151,14 +145,14 @@ public class WikitravelCrawler {
 					  .data("query", "Java")
 					  .userAgent("Mozilla")
 					  .cookie("auth", "token")
-					  .timeout(3000)
+					  .timeout(TIMEOUT_DURATION)
 					  .post();
 			
 			Iterator<Element> sections = doc.select("text").iterator();
 			String sectionContent = "";
 			while(sections.hasNext()){
 				Element sectionCon = sections.next();
-				sectionContent = cp.parseSummaryContent(sectionCon.html());
+				sectionContent = ContentParser.parseSummaryContent(sectionCon.html());
 				System.out.println(sectionContent);
 			}
 			
@@ -195,7 +189,7 @@ public class WikitravelCrawler {
 					  .data("query", "Java")
 					  .userAgent("Mozilla")
 					  .cookie("auth", "token")
-					  .timeout(3000)
+					  .timeout(TIMEOUT_DURATION)
 					  .post();
 			
 			Iterator<Element> imageInfos = doc.select("ii").iterator();
@@ -214,5 +208,34 @@ public class WikitravelCrawler {
 			
 			return null;
 		}
+	}
+
+	
+	private ArrayList<Page> getPagesFromCategory(int numberOfPages, String keyword){
+		ArrayList<Page> pages = new ArrayList<Page>();
+		
+		String url = "http://wikitravel.org/wiki/en/api.php?action=query&list=categorymembers&cmtitle=Category:"+keyword+"&cmlimit="+numberOfPages+"&format=xml";
+		Document doc;
+		try {
+			doc = Jsoup.connect(url)
+					  .data("query", "Java")
+					  .userAgent("Mozilla")
+					  .cookie("auth", "token")
+					  .timeout(TIMEOUT_DURATION)
+					  .post();
+			
+			Iterator<Element> sections = doc.select("cm").iterator();
+			while(sections.hasNext()){
+				Element pageCon = sections.next();
+				Page page = new Page(Integer.parseInt(pageCon.attr("pageid")), pageCon.attr("title"));
+				pages.add(page);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			System.out.println("Couldn't parse Page");
+		}
+		
+		return pages;
 	}
 }

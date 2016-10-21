@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import model.City;
+import model.Page;
 import model.Section;
-import wikitravel.WikitravelController;
 import wikitravel.WikitravelCrawler;
 
 public class WikitravelTest {
@@ -17,7 +17,7 @@ public class WikitravelTest {
 	public void sectionsTest() {
 		WikitravelCrawler wc = new WikitravelCrawler();
 		String pageTitle = "San%20Francisco";
-		ArrayList<Section> swList = wc.getSectionsByPageTitle(pageTitle);
+		ArrayList<Section> swList = wc.getSections(pageTitle);
 		String swResult = "";
 		
 		for(Section sw : swList){
@@ -41,7 +41,7 @@ public class WikitravelTest {
 		String pageTitle = "San%20Francisco";
 		Section history = new Section("History", "2.1", 3);
 		
-		wc.getSectionContentByPageTitle(pageTitle, history);
+		wc.getSectionContent(pageTitle, history);
 		
 		assert(!history.getContent().equals(""));
 	}
@@ -50,7 +50,7 @@ public class WikitravelTest {
 	public void cityTest(){
 		WikitravelCrawler wc = new WikitravelCrawler();
 		String cityName = "San Francisco";
-		City c = wc.parsePage(cityName);
+		City c = wc.parsePage(new Page(0, cityName));
 		
 		assert(c.getName().equals("San Francisco"));
 		assertEquals("Climate", c.getSections().get(3).getName());

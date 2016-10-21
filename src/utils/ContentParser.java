@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 public class ContentParser {
 
-	public String parseSummaryContent(String content){
+	public static String parseSummaryContent(String content){
 		
 		content = StringEscapeUtils.unescapeXml(content);
 		
@@ -19,7 +19,7 @@ public class ContentParser {
 		return content.substring(content.indexOf(pattern1));
 	}
 	
-	public String parseSectionContent(String content){
+	public static String parseSectionContent(String content){
 		
 		content = StringEscapeUtils.unescapeXml(content);
 		
@@ -29,7 +29,7 @@ public class ContentParser {
 		return content.substring(0, content.indexOf(pattern1))+content.substring(content.indexOf(pattern2)+pattern2.length());
 	}
 	
-	public String parseSearchKeyword(String keyword){
+	public static String encodeIntoURL(String keyword){
 		try {
 			return URLEncoder.encode(keyword, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
