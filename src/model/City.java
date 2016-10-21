@@ -7,14 +7,14 @@ public class City {
 	private String summaryContent;
 	private ArrayList<Section> sections;
 	private ArrayList<ImageData> images;
-	private ArrayList<Tweet> tweets;
+	private ArrayList<TweetData> tweets;
 	
 	public City(){
 		setName("");
 		setSummaryContent("");
 		setSections(new ArrayList<Section>());
 		setImages(new ArrayList<ImageData>());
-		tweets = new ArrayList<Tweet>();
+		tweets = new ArrayList<TweetData>();
 	}
 	
 	public City(String name){
@@ -22,7 +22,7 @@ public class City {
 		setSummaryContent("");
 		setSections(new ArrayList<Section>());
 		setImages(new ArrayList<ImageData>());
-		tweets = new ArrayList<Tweet>();
+		tweets = new ArrayList<TweetData>();
 	}
 
 	public ArrayList<Section> getSections() {
@@ -75,11 +75,11 @@ public class City {
 		images.add(image);
 	}
 
-	public ArrayList<Tweet> getTweets() {
+	public ArrayList<TweetData> getTweets() {
 		return tweets;
 	}
 
-	public void addTweet(Tweet tweet) {
+	public void addTweet(TweetData tweet) {
 		tweets.add(tweet);
 	}
 }
