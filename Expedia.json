@@ -2,7 +2,7 @@
   "map": {
     "HotelListResponse": {
       "map": {
-        "cacheKey": "-1b1b93af:157e16bc6de:3fe7",
+        "cacheKey": "75922ced:157e1572927:7085",
         "numberOfRoomsRequested": 1,
         "HotelList": {
           "map": {
@@ -69,7 +69,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "5af4d44c-aa22-458e-a81b-b588d767cde7-5206",
+                                            "rateKey": "170b7394-f055-4e5b-9aa6-cdaddb659902-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -235,7 +235,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "b2e2903d-05a1-43ff-ab94-8a78f2f38aa3-5206",
+                                            "rateKey": "9b2c78fe-9dbb-4ceb-b130-51fcb88055d1-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -399,7 +399,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "46f63dfb-42e8-4a60-b03e-fc8b3fab6e42-5206",
+                                            "rateKey": "c3afbcd9-6ce1-4458-832f-7a8fbe315461-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -551,7 +551,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "c4cc5d42-b1e9-4c28-b2c3-36e8cc5ef42d-5206",
+                                            "rateKey": "5f940953-e826-4ce3-8e9f-ce710af3b506-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -704,7 +704,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "f382e693-afde-4b98-a00c-f958c1caef51-5206",
+                                            "rateKey": "5e321f37-9045-4893-8c2b-177226f15d82-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -856,7 +856,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "437232b5-5bba-477c-b6d4-46e36d864889-5206",
+                                            "rateKey": "8b5a59bc-2d30-447b-b9e2-5c2c157b1dfd-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1019,7 +1019,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "03974741-cedd-4ae3-b7d6-01c501ced195-5206",
+                                            "rateKey": "4b253656-0ad8-4f48-9129-10397cdfa21e-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1170,7 +1170,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "10dd3b96-e0a0-4399-9a42-8bf6e2de2330-5206",
+                                            "rateKey": "824e4a0b-963e-4557-b4c8-5603a01db79d-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1331,7 +1331,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "c4d083da-cc5d-4f29-8688-51d96610aaa8-5206",
+                                            "rateKey": "a50c6383-5775-44fe-b626-7d7de2b4ddfa-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1493,7 +1493,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "2e5fc8c0-3b3e-40f7-9f83-9a048dbca673-5206",
+                                            "rateKey": "f62c9ff3-79ba-437f-846b-9e8ed20b8fc1-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1656,7 +1656,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "864598a4-a98e-4477-b5fc-94d4ca724134-5206",
+                                            "rateKey": "88b33896-2938-49d6-b892-db10925da91c-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1810,7 +1810,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "92753aa2-4e39-4b92-8a46-5b4363c8cf3f-5206",
+                                            "rateKey": "b9c8974a-6774-4cfe-a916-512f2ef52386-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -1973,7 +1973,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "a0b8ed5f-8d0d-4225-a357-dd8e65faadb2-5206",
+                                            "rateKey": "cb5eb168-d2d4-497a-9c52-d04b809911ec-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2138,7 +2138,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "a0a51688-1aae-4280-82e5-0fa2d34e172b-5206",
+                                            "rateKey": "1ccb4ac5-726f-48f9-8a7a-dbccfcce7198-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2307,7 +2307,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "16d4aa7c-0c5a-46a5-95ff-a0b512ada2ee-5206",
+                                            "rateKey": "491dbb52-82d6-4a13-a7dc-02d98da8d772-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2478,7 +2478,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "312b1c91-9d1c-408c-8bb5-a6ef81cf1bd8-5206",
+                                            "rateKey": "4a972165-3b38-4261-b211-829360bd59be-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2640,7 +2640,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "c86e9c8b-e903-4156-8e49-bae9767a932b-5206",
+                                            "rateKey": "8a381e83-44e3-4234-83e1-18dcafe02c07-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2803,7 +2803,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "2c26657b-1b8c-4ba9-a7bb-960f81d78a0c-5206",
+                                            "rateKey": "51b52f9f-21b6-4836-b230-e9a1d718a08f-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -2954,7 +2954,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "b3c27c31-7748-4533-9f64-75175cfd865e-5206",
+                                            "rateKey": "0851496c-bda6-4088-bf75-9c7e58651d20-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -3095,7 +3095,7 @@
                                       "map": {
                                         "Room": {
                                           "map": {
-                                            "rateKey": "a365f214-e1ed-4104-b797-ae781dd75d43-5206",
+                                            "rateKey": "81406e47-901b-4d46-8575-99f826e86a9e-5206",
                                             "ChargeableNightlyRates": {
                                               "myArrayList": [
                                                 {
@@ -3201,13 +3201,13 @@
             "@activePropertyCount": "1054"
           }
         },
-        "customerSessionId": "0ABAAA47-1B93-AF91-57E2-16BC6DE93F37",
-        "cacheLocation": "10.186.170.71:7300",
+        "customerSessionId": "0AB29037-922C-ED91-57E2-157292797074",
+        "cacheLocation": "10.178.144.55:7300",
         "cachedSupplierResponse": {
           "map": {
             "@tpidUsed": "5206",
-            "@otherOverheadTime": "1328",
-            "@candidatePreptime": "36",
+            "@otherOverheadTime": "1218",
+            "@candidatePreptime": "99",
             "@matchedCurrency": "true",
             "@supplierCacheTolerance": "NOT_SUPPORTED",
             "@cachedTime": "0",

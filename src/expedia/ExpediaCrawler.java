@@ -155,7 +155,6 @@ public class ExpediaCrawler {
 		//%3C = <
 		//%3F = >
 		//%2F = /
-		
 		plain = plain.replaceAll("<", "%3C");
 		plain = plain.replaceAll(">", "%3E");
 		plain = plain.replaceAll("/", "%2F");
