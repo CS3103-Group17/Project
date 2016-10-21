@@ -11,7 +11,7 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 
-public class twitterCrawler {
+public class TwitterCrawler {
 	public final static String ConsumerKey = "splkcDS1sIUD73XoxojCUkAZz";
 	public final static String ConsumerSecret = "pwClsMLOBnMIGeRJXvmKUW5aFkCTOcnWo1jgN2xoIdym2dfOD5";
 	public final static String AccessToken = "785738937620803588-lmCTgOlXycaJaflvmfq9D8zH67nHsFe";

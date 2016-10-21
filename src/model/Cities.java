@@ -28,4 +28,8 @@ public class Cities {
 		return null;
 	}
 	
+	public void clear(){
+		cities.clear();
+	}
+	
 }

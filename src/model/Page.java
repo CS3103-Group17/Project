@@ -8,6 +8,11 @@ public class Page {
 		this.setPageID(pageID);
 		this.setPageTitle(pageTitle);
 	}
+	
+	public Page(String pageTitle){
+		this.setPageID(-1);
+		this.setPageTitle(pageTitle);
+	}
 
 	public int getPageID() {
 		return pageID;

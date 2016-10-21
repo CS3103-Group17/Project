@@ -7,8 +7,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import model.City;
 import model.ImageData;
 import model.Page;
@@ -24,16 +22,22 @@ public class WikitravelCrawler {
 	}
 	
 	public City parsePage(Page page){
-		City city = new City(page.getPageTitle());
-		getCitySummaryByPageID(page.getPageID(), city);
-		ArrayList<Section> sections = getSectionsByPageID(page.getPageID());
-		for(Section s : sections){
-			getSectionContentByPageID(page.getPageID(), s);
+		if(page.getPageID() != -1){
+			City city = new City(page.getPageTitle());
+			getCitySummaryByPageID(page.getPageID(), city);
+			ArrayList<Section> sections = getSectionsByPageID(page.getPageID());
+			for(Section s : sections){
+				if(!getSectionContentByPageID(page.getPageID(), s))
+					sections.remove(s);
+			}
+			
+			city.setSections(sections);
+			
+			return city;
 		}
-		
-		city.setSections(sections);
-		
-		return city;
+		else {
+			return parsePage(page.getPageTitle());
+		}
 	}
 	
 	public City parsePage(String pageTitle){
@@ -42,7 +46,8 @@ public class WikitravelCrawler {
 		getCitySummaryByPageTitle(pageTitle, city);
 		ArrayList<Section> sections = getSectionsByPageTitle(pageTitle);
 		for(Section s : sections){
-			getSectionContentByPageTitle(pageTitle, s);
+			if(!getSectionContentByPageTitle(pageTitle, s))
+				sections.remove(s);
 		}
 		
 		city.setSections(sections);
@@ -87,17 +92,17 @@ public class WikitravelCrawler {
 		return sectionsList;
 	}
 	
-	public void getSectionContentByPageTitle(String pageTitle, Section section){
+	public boolean getSectionContentByPageTitle(String pageTitle, Section section){
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&page="+pageTitle+"&section="+section.getIndex();
-		getSectionContent(url, section);
+		return getSectionContent(url, section);
 	}
 	
-	public void getSectionContentByPageID(int pageID, Section section){
+	public boolean getSectionContentByPageID(int pageID, Section section){
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&pageid="+pageID+"&section="+section.getIndex();
-		getSectionContent(url, section);
+		return getSectionContent(url, section);
 	}
 	
-	public void getSectionContent(String url, Section section){
+	public boolean getSectionContent(String url, Section section){
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
@@ -111,16 +116,21 @@ public class WikitravelCrawler {
 			String sectionContent = "";
 			while(sections.hasNext()){
 				Element sectionCon = sections.next();
-				sectionContent = cp.parseSectionContent(sectionCon.html());
+				
+				if(sectionCon.html().equals(""))
+					return false;
+				else
+					sectionContent = cp.parseSectionContent(sectionCon.html());
 			}
 			
 			section.setContent(sectionContent);
 			System.out.println(section.getContent());
+			return true;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
 			System.out.println("Couldn't parse Section");
+			return false;
 		}
 	}
 	

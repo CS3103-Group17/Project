@@ -55,11 +55,5 @@ public class WikitravelTest {
 		assert(c.getName().equals("San Francisco"));
 		assertEquals("Climate", c.getSections().get(3).getName());
 	}
-	
-	@Test
-	public void controllerTest(){
-		WikitravelController wCon = new WikitravelController();
-		wCon.parseCategory();
-	}
 
 }
