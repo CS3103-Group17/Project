@@ -75,8 +75,8 @@ public class LeftPaneController {
                     	if(val.equals("Trend")){
                     		mvc.loadTrendHTML(c.getGoogleTrendsHTML());
                     	}
-                    	else if (val.equals("Trend")){
-                    		
+                    	else if (val.equals("Gallery")){
+                    		mvc.loadGallery(c.getImages());
                     	}
                     	else {
                     		Section s = c.findSection(val);

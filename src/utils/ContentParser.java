@@ -38,4 +38,8 @@ public class ContentParser {
 			return null;
 		}
 	}
+	
+	public static String parseImageTitle(String title){
+		return title.replace("<b>", "").replace("</b>", "").replace("<i>", "").replace("</i>", "");
+	}
 }

@@ -41,7 +41,7 @@ public class WikitravelTest {
 		String pageTitle = "San%20Francisco";
 		Section history = new Section("History", "2.1", 3);
 		
-		wc.getSectionContent(pageTitle, history);
+		wc.getSectionContent(pageTitle, history, new City("Singapore"));
 		
 		assert(!history.getContent().equals(""));
 	}

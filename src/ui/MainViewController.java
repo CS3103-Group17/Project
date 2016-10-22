@@ -1,12 +1,13 @@
 package ui;
 
+import java.util.ArrayList;
+
 import javafx.geometry.Insets;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import main.DataController;
+import model.ImageData;
 import model.Section;
 import storage.Storage;
 
@@ -15,10 +16,11 @@ public class MainViewController {
 	private BorderPane mainPane;
 	private BorderPane topPane;
 	private StackPane leftPane;
-	private WebEngine centerWebEngine;
+	private StackPane centerPane;
 	
 	private TopPaneController topCon;
 	private LeftPaneController leftCon;
+	private CenterPaneController centerCon;
 	
 	private DataController dataCon;
 	
@@ -28,10 +30,10 @@ public class MainViewController {
 	// @@author A0139963N
 	public MainViewController(Storage s) {
 		dataCon = new DataController(s);
-		//wtCon.parseCategory();
 		
 		topCon = new TopPaneController(this);
 		leftCon = new LeftPaneController(s.getDisplayCities(), this);
+		centerCon = new CenterPaneController();
 	}
 
 	public BorderPane initialize(Stage primaryStage) {
@@ -63,10 +65,9 @@ public class MainViewController {
 	}
 	
 	private void setUpCentrePane(){
-		WebView webView = new WebView();
-        centerWebEngine = webView.getEngine();
-        
-		mainPane.setCenter(webView);
+		centerPane = centerCon.getCenterPane();
+		
+		mainPane.setCenter(centerPane);
 	}
 	
 	private void setUpTopPane(){
@@ -88,18 +89,18 @@ public class MainViewController {
 	}
 	
 	public void changeCenterContent(Section s){
-		centerWebEngine.loadContent(s.getContent());
+		centerCon.changeCenterContent(s);
 	}
 	
 	public void changeCenterContent(String s){
-		centerWebEngine.loadContent(s);
+		centerCon.changeCenterContent(s);
 	}
 	
 	public void loadTrendHTML(String html){
-		centerWebEngine.loadContent(html);
+		centerCon.loadTrendHTML(html);
 	}
 	
-	public void loadGallery(String html){
-		centerWebEngine.loadContent(html);
+	public void loadGallery(ArrayList<ImageData> images){
+		centerCon.loadGallery(images);
 	}
 }
