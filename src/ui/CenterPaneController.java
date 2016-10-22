@@ -44,13 +44,15 @@ public class CenterPaneController {
 	}
 	
 	public void changeCenterContent(Section s){
-		centerWebEngine.loadContent(s.getContent());
+		String css = "<link rel=\"stylesheet\" href=\"http://wikitravel.org/mw/skins/common/commonContent.css\" />";
+		centerWebEngine.loadContent(css+s.getContent());
 		centerPane.getChildren().clear();
 		centerPane.getChildren().add(webView);
 	}
 	
 	public void changeCenterContent(String s){
-		centerWebEngine.loadContent(s);
+		String css = "<link rel=\"stylesheet\" href=\"http://wikitravel.org/mw/skins/common/commonContent.css\" />";
+		centerWebEngine.loadContent(css+s);
 		centerPane.getChildren().clear();
 		centerPane.getChildren().add(webView);
 	}

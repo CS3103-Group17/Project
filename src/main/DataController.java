@@ -27,6 +27,10 @@ public class DataController {
 				City c = wc.parsePage(p);
 				c.setGoogleTrendsHTML(GoogleSearch.getTrend(p.getPageTitle()));
 				c.addImages(GoogleSearch.getImages(p.getPageTitle()));
+				
+				//If you want to grab the keyword, grab it here. p.getPageTitle() = "Singapore" for example
+				
+				
 				s.addCity(c);
 				s.addToHistory(p);
 			}
