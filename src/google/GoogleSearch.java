@@ -27,7 +27,7 @@ public class GoogleSearch {
 					  .data("query", "Java")
 					  .cookie("auth", "token")
 					  .ignoreContentType(true)
-					  .timeout(3000)
+					  .timeout(0)
 					  .get();
 			
 			Iterator<Element> imageInfos = doc.select("entry").iterator();
@@ -37,7 +37,7 @@ public class GoogleSearch {
 				String title = imageInfo.children().select("title").html();
 				title = StringEscapeUtils.unescapeXml(title);
 				
-				imageResults.add(new ImageData(id, title, ""));
+				imageResults.add(new ImageData(title, id, ""));
 			}
 			
 			return imageResults;
@@ -60,7 +60,7 @@ public class GoogleSearch {
 			doc = Jsoup.connect(url)
 					  .userAgent("Mozilla/5.0")
 					  .ignoreContentType(true)
-					  .timeout(3000)
+					  .timeout(0)
 					  .get();
 			
 			return doc.html();

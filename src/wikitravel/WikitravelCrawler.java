@@ -20,10 +20,10 @@ public class WikitravelCrawler {
 	public City parsePage(Page page){
 		City city = new City(page.getPageTitle());
 		String pageTitle = page.getPageTitle().replace(" ", "%20");
-		getCitySummaryByPageTitle(pageTitle, city);
+		getCitySummary(pageTitle, city);
 		ArrayList<Section> sections = getSections(pageTitle);
 		for(Section s : sections){
-			if(!getSectionContent(pageTitle, s))
+			if(!getSectionContent(pageTitle, s, city))
 				sections.remove(s);
 		}
 		
@@ -92,7 +92,7 @@ public class WikitravelCrawler {
 		return sectionsList;
 	}
 	
-	public boolean getSectionContent(String pageTitle, Section section){
+	public boolean getSectionContent(String pageTitle, Section section, City city){
 		pageTitle = ContentParser.encodeIntoURL(pageTitle);
 		
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&page="+pageTitle+"&section="+section.getIndex();
@@ -118,6 +118,16 @@ public class WikitravelCrawler {
 			}
 			
 			section.setContent(sectionContent);
+			
+			Iterator<Element> images = doc.select("img").iterator();
+			while(images.hasNext()){
+				Element imageElement = images.next();
+				ImageData id = getImageData(imageElement.html());
+				
+				if(id != null)
+					city.addImage(id);
+			}
+			
 			System.out.println(section.getContent());
 			return true;
 		} catch (Exception e) {
@@ -128,17 +138,11 @@ public class WikitravelCrawler {
 		}
 	}
 	
-	public void getCitySummaryByPageTitle(String pageTitle, City city){
+	public void getCitySummary(String pageTitle, City city){
+		pageTitle = ContentParser.encodeIntoURL(pageTitle);
+
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&page="+pageTitle+"&section=0";
-		getCitySummary(url, city);
-	}
-	
-	public void getCitySummaryByPageID(int pageID, City city){
-		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&pageid="+pageID+"&section=0";
-		getCitySummary(url, city);
-	}
-	
-	public void getCitySummary(String url, City city){
+		
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
