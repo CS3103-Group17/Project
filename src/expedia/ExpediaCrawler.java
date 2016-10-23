@@ -1,7 +1,6 @@
 package expedia;
 
 import java.io.BufferedReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,6 +8,8 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -19,28 +20,30 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import model.HotelData;
 
 
 public class ExpediaCrawler {
 	
-	static String service = "http://api.ean.com/ean-services/rs/hotel/";
-	static String version = "v3/";
-	static String method = "list";
-	static String hotelId = "201252";
-	static long customerId = 461872;
-	static int minorRev = 30;
-	static String userAgent = "Mozilla/5.0%20(Macintosh;U;Intel%20Mac%20OS%20X%2010.4;en-US;rv:1.9.2.2)";
-	static String currency = "SGD";
-	static String locale = "en-US";
-	static String apikey = "3ogl1d5scbaggl6g4gpu4eehh4";
-	static String secret = "2nbr7o4j17vl8";
-
-	public static void main(String[] args) {
+	String service = "http://api.ean.com/ean-services/rs/hotel/";
+	String version = "v3/";
+	String method = "list";
+	String hotelId = "201252";
+	long customerId = 461872;
+	int minorRev = 30;
+	String userAgent = "Mozilla/5.0%20(Macintosh;U;Intel%20Mac%20OS%20X%2010.4;en-US;rv:1.9.2.2)";
+	String currency = "SGD";
+	String locale = "en-US";
+	String apikey = "3ogl1d5scbaggl6g4gpu4eehh4";
+	String secret = "2nbr7o4j17vl8";
+	int numberOfResults = 10;
+	
+	public ArrayList<HotelData> getHotels(String destination) {
 		
+		ArrayList<HotelData> dataSet = new ArrayList<HotelData>();
 		String ipAddress = getPublicIP();
 		String sig = generateSig();
 		String otherElementsStr = "&cid="+customerId+"&minorRev="+minorRev+"&customerUserAgent="+userAgent+"&customerIpAddress="+ipAddress+"&locale="+locale+"&currencyCode="+currency;
@@ -50,52 +53,20 @@ public class ExpediaCrawler {
 		JSONObject myResult;
 		String customerSessionId = "";
 		
-		/*
-		<HotelListRequest>
-		<arrivalDate>11/10/2016</arrivalDate>
-		<departureDate>11/12/2016</departureDate>
-		<RoomGroup>
-		<Room>
-		<numberOfAdults>2</numberOfAdults>
-		<numberOfChildren>1</numberOfChildren>
-		<childAges>
-		</childAges>
-		</Room>
-		<Room>
-		<numberOfAdults>1</numberOfAdults>
-		<numberOfChildren>2</numberOfChildren>
-		<childAges>,</childAges>
-		</Room>
-		</RoomGroup>
-		<city>south korea</city>
-		<countryCode>
-		</countryCode>
-		<numberOfResults>20</numberOfResults>
-		</HotelListRequest>
-		 */
 		//variables
-		String arrivalDate = "11/10/2016";
-		String departureDate = "11/12/2016";
-		int rooms = 2;
-		int[][] pax = new int[rooms][2];	//[room] [0 adult, 1 child]
-		pax[0][0] = 2;
-		pax[1][1] = 2;
-		String destination = "Seoul"; //can be city or country
-		int numberOfResults = 20;
+		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		Calendar cal = Calendar.getInstance(); 
+		cal.add(Calendar.DATE, 25);
+		String arrivalDate = format.format(cal.getTime());
+		cal.add(Calendar.DATE, 1);
+		String departureDate = format.format(cal.getTime());
 		
 		String xml = "<HotelListRequest><arrivalDate>"+arrivalDate+"</arrivalDate><departureDate>"+departureDate+"</departureDate><RoomGroup>";
-		for(int i = 0; i< rooms; i++) {
-			xml += "<Room><numberOfAdults>"+pax[i][0]+"</numberOfAdults><numberOfChildren>"+pax[i][1]+"</numberOfChildren></Room>";
-		}
+		xml += "<Room><numberOfAdults>1</numberOfAdults></Room>";
 		xml += "</RoomGroup><city>"+destination+"</city><countryCode></countryCode><numberOfResults>"+numberOfResults+"</numberOfResults></HotelListRequest>";
 		xml = translateXmlToUrl(xml);
-		
+				
 		try {
-			//http://api.ean.com/ean-services/rs/hotel/v3/list?cid=461872&apiKey=3ogl1d5scbaggl6g4gpu4eehh4&minorRev=26&currencyCode=EUR&locale=de_DE&customerUserAgent=Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2&customerIpAddress=42.60.195.128&city=Seoul&countryCode=KR&sort=CITY_VALUE
-			//String url = "http://api.ean.com/ean-services/rs/hotel/v3/list?cid="+customerId+"&apiKey="+apiKey+"&currencyCode="+currency+"&locale="+locale+"&customerUserAgent="+userAgent+"&customerIpAddress="+ipAddress+"&city="+city+"&countryCode="+country+"&sig="+sig;
-			//String url = "http://terminal2.expedia.com/x/mhotels/search?city="+city+"&checkInDate="+checkIn+"&checkOutDate="+checkOut+"&room1="+pax+"&apikey="+apiKey+"&cid="+customerId+"&sig="+sig;
-			//String url = service + version + method+ "?apikey=" + apikey
-			//		 + "&sig=" + sig + otherElementsStr + "&hotelIdList=" + hotelId;
 			String url = service + version + method+ "?apikey=" + apikey
 					 + "&sig=" + sig + otherElementsStr + "&customerSessionId=" + customerSessionId+ "&xml=" + xml;
 			System.out.println("URL is: "+url);
@@ -122,36 +93,38 @@ public class ExpediaCrawler {
 	        
 	        myResult = new JSONObject(result);
 	        
-	        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-	        String json = gson.toJson(myResult);
-	        try (FileWriter file = new FileWriter("Expedia.json")) {
-				file.write(json);
-			}
-	        /*
-	        Storage expediaStorage = new Storage();
-	        File expediaStore = new File("expedia.json");
-	        expediaStorage.setSaveFile("expedia.json");
-	        expediaStorage.writeJSONToFile(myResult.toString(), expediaStore);
-
-			try (FileWriter file = new FileWriter("Expedia.txt")) {
-				file.write(myResult.toString());
-			}
-			*/
-			
+	        JSONArray tempArray = myResult.getJSONObject("HotelListResponse").getJSONObject("HotelList").getJSONArray("HotelSummary");
+	        for (int i = 0; i < tempArray.length(); i++) {
+	        	JSONObject temp = tempArray.getJSONObject(i);
+	        	dataSet.add(extractDetails(temp));	
+	        }
+	      
 	    } catch (ClientProtocolException e1) {
 	        e1.printStackTrace();
 	    } catch (IOException e1) {
 	        e1.printStackTrace();
 	    }catch (Exception ex) {
-	        // handle exception here
 	    	ex.printStackTrace();
 	    }
 		
-
+        return dataSet;
 	}
 	
-	private static String translateXmlToUrl(String plain) {
+	private HotelData extractDetails(JSONObject map) {
+		
+		String name = map.getString("name");
+		String address1 = map.getString("address1");
+		float highRate = (float) map.getDouble("highRate");
+		float lowRate = (float) map.getDouble("lowRate");
+		String rateCurrencyCode = map.getString("rateCurrencyCode");
+		
+		String roomDescription = map.getJSONObject("RoomRateDetailsList").getJSONObject("RoomRateDetails").getString("roomDescription");
+		HotelData mydata = new HotelData(name, address1, highRate, lowRate, rateCurrencyCode, roomDescription);
+		//System.out.println(mydata);
+		return mydata;
+	}
+	
+	private String translateXmlToUrl(String plain) {
 		//%3C = <
 		//%3F = >
 		//%2F = /
@@ -161,7 +134,7 @@ public class ExpediaCrawler {
 		return plain;
 	}
 	
-	private static String getPublicIP() {
+	private String getPublicIP() {
 		URL whatismyip;
 		try {
 			whatismyip = new URL("http://checkip.amazonaws.com");
@@ -175,7 +148,7 @@ public class ExpediaCrawler {
 		return "";
 	}
 	
-	private static String generateSig(){
+	private String generateSig(){
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			
@@ -193,7 +166,7 @@ public class ExpediaCrawler {
 		return "";
 	}
 	
-	private static String convertStreamToString(InputStream is) {
+	private String convertStreamToString(InputStream is) {
 
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 	    StringBuilder sb = new StringBuilder();
