@@ -8,14 +8,15 @@ public class HotelData {
 	
 	private String name;
 	private String address1;
-	private float highRate;
-	private float lowRate;
+	private float totalPrice;
 	private String rateCurrencyCode;
 	private String roomDescription;
 	NumberFormat formatter = new DecimalFormat("#0.00");
 	
 	//not used atm
 	private int hotelId;
+	private float highRate;
+	private float lowRate;
 	private String city;
 	private String locationDescription;
 	private String countryCode;
@@ -23,6 +24,18 @@ public class HotelData {
 	private int quotedRoomOccupancy;
 	private String shortDescription;
 	
+	public HotelData(String name, String address1, 
+			float totalPrice, String rateCurrencyCode, String roomDescription) {
+
+		this.name  = name;
+		this.name  = name;
+		this.address1 = address1;
+		this.roomDescription = roomDescription;
+		this.totalPrice  = totalPrice;
+		this.rateCurrencyCode  = rateCurrencyCode;
+	}
+	
+	/*
 	public HotelData(String name, String address1, 
 			float highRate, float lowRate, String rateCurrencyCode, String roomDescription) {
 
@@ -34,8 +47,7 @@ public class HotelData {
 		this.lowRate = lowRate;
 		this.rateCurrencyCode  = rateCurrencyCode;
 	}
-
-	/*
+	
 	public HotelData(int hotelId, String name, String city, String locationDescription, String countryCode, String shortDescription,
 			int maxRoomOccupancy, String roomDescription, 
 			int quotedRoomOccupancy, String address1, 
@@ -102,7 +114,8 @@ public class HotelData {
 
 
 	public String toString(){
-		return "Name: "+name +"\nAddress: "+ address1  +"\nHigh rate: "+ highRate  +rateCurrencyCode+"\nLow rate: "+ lowRate +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\n";
+		return "Name: "+name +"\nAddress: "+ address1  +"\nTotal Price: "+ totalPrice  +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\n";
+		//return "Name: "+name +"\nAddress: "+ address1  +"\nHigh rate: "+ highRate  +rateCurrencyCode+"\nLow rate: "+ lowRate +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\n";
 		/*
 		return "#"+hotelId+" "+", "+name+" @"+city+","+countryCode+", "+address1+"\n"
 				+locationDescription+", "+shortDescription+ "\n"

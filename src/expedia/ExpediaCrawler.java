@@ -40,7 +40,7 @@ public class ExpediaCrawler {
 	String apikey = "3ogl1d5scbaggl6g4gpu4eehh4";
 	String secret = "2nbr7o4j17vl8";
 	int numberOfResults = 10;
-	
+
 	public ArrayList<HotelData> getHotels(String destination) {
 		
 		ArrayList<HotelData> dataSet = new ArrayList<HotelData>();
@@ -114,12 +114,14 @@ public class ExpediaCrawler {
 		
 		String name = map.getString("name");
 		String address1 = map.getString("address1");
-		float highRate = (float) map.getDouble("highRate");
-		float lowRate = (float) map.getDouble("lowRate");
+		float totalRate = Float.valueOf(map.getJSONObject("RoomRateDetailsList").getJSONObject("RoomRateDetails").getJSONObject("RateInfos").getJSONObject("RateInfo").getJSONObject("ChargeableRateInfo").getString("@total"));
+		//float highRate = (float) map.getDouble("highRate");
+		//float lowRate = (float) map.getDouble("lowRate");
 		String rateCurrencyCode = map.getString("rateCurrencyCode");
 		
 		String roomDescription = map.getJSONObject("RoomRateDetailsList").getJSONObject("RoomRateDetails").getString("roomDescription");
-		HotelData mydata = new HotelData(name, address1, highRate, lowRate, rateCurrencyCode, roomDescription);
+		//HotelData mydata = new HotelData(name, address1, highRate, lowRate, rateCurrencyCode, roomDescription);
+		HotelData mydata = new HotelData(name, address1, totalRate, rateCurrencyCode, roomDescription);
 		//System.out.println(mydata);
 		return mydata;
 	}
@@ -148,7 +150,7 @@ public class ExpediaCrawler {
 		return "";
 	}
 	
-	private String generateSig(){
+	private	String generateSig(){
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			
@@ -166,7 +168,7 @@ public class ExpediaCrawler {
 		return "";
 	}
 	
-	private String convertStreamToString(InputStream is) {
+	private	String convertStreamToString(InputStream is) {
 
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 	    StringBuilder sb = new StringBuilder();
