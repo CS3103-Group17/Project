@@ -1,9 +1,8 @@
 package twitter;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
-import twitter4j.MediaEntity;
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Status;
@@ -25,10 +24,10 @@ public class TwitterCrawler {
 	 * search and retrieve tweets using the search term	
 	 * @param searchTerm
 	 * @param tweetsCount
-	 * @return a linkedlist of tweetData
+	 * @return a arrayList of tweetData
 	 */
-	public LinkedList<TweetData> getTweets(String searchTerm, int tweetsCount){
-		LinkedList<TweetData> list = new LinkedList<TweetData>();
+	public ArrayList<TweetData> getTweets(String searchTerm, int tweetsCount){
+		ArrayList<TweetData> list = new ArrayList<TweetData>();
 
 		twitter = new TwitterFactory().getInstance();
 		twitter.setOAuthConsumer(ConsumerKey, ConsumerSecret);
