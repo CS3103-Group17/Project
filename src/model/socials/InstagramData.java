@@ -1,6 +1,6 @@
 package model.socials;
 
-public class Instagram {
+public class InstagramData {
 	private int ID;
 	private String userHandle;
 	private String caption;
@@ -16,7 +16,7 @@ public class Instagram {
 	 * @param imageURL
 	 */
 	
-	public Instagram(int iD, String userHandle, String caption, String sourceURL, String imageURL) {
+	public InstagramData(int iD, String userHandle, String caption, String sourceURL, String imageURL) {
 		ID = iD;
 		this.userHandle = userHandle;
 		this.caption = caption;

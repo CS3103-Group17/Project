@@ -10,13 +10,13 @@ import org.jinstagram.entity.tags.TagMediaFeed;
 import org.jinstagram.entity.users.feed.MediaFeedData;
 import org.jinstagram.exceptions.InstagramException;
 
-import model.socials.Instagram;
+import model.socials.InstagramData;
 
 public class InstagramCrawler {
 	
-	public ArrayList<Instagram> getIgPosts(String searchTerm){
+	public ArrayList<InstagramData> getIgPosts(String searchTerm){
 		
-		ArrayList<Instagram> list = new ArrayList<Instagram>();
+		ArrayList<InstagramData> list = new ArrayList<InstagramData>();
 		
 		/*
 		InstagramService service = new InstagramAuthService()
@@ -47,7 +47,7 @@ public class InstagramCrawler {
 		Iterator<MediaFeedData> it = mediaFeeds.iterator();
 		while(it.hasNext()){
 			MediaFeedData mediaFeedData = it.next();
-			Instagram temp = new Instagram(idx, mediaFeedData.getUser().getUserName(), 
+			InstagramData temp = new InstagramData(idx, mediaFeedData.getUser().getUserName(), 
 					mediaFeedData.getCaption().getText(), mediaFeedData.getLink(), 
 					mediaFeedData.getImages().getStandardResolution().getImageUrl());
 			list.add(temp);
