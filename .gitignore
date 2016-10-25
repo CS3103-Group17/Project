@@ -1,3 +1,38 @@
+# Eclipse
+# =========
+.project
+
+# OSX / iOS
+# =========
+._*
+.AppleDouble
+.DocumentRevisions-V100
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+*.DS_Store
+[Tt]humbs.db
+Icon?
+
+# Others
+# ======
+.settings/
+bin/
+tmp/
+~$*
+*~
+*.bak
+*.swp
+*.tmp
+.loadpath
+.metadata
+.recommenders
+local.properties
+
+# Project-specific files
+========================
 /target/
-storageCities.json
-storageHistory.json
+*.json
