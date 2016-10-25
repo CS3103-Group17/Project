@@ -4,10 +4,10 @@ import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.StackPane;
-import model.Cities;
-import model.City;
 import model.ImageData;
 import model.Section;
+import model.travels.Cities;
+import model.travels.City;
 
 public class LeftPaneController {
 	
@@ -69,7 +69,7 @@ public class LeftPaneController {
                     TreeItem<String> treeItem = cell.getTreeItem();
                     
                     if(treeItem.isLeaf()){
-                    	City c = cities.findCity(treeItem.getParent().getValue());
+                    	City c = cities.getCity(treeItem.getParent().getValue());
                     	
                     	String val = treeItem.getValue();
                     	if(val.equals("Trend")){
@@ -79,14 +79,14 @@ public class LeftPaneController {
                     		mvc.loadGallery(c.getImages());
                     	}
                     	else {
-                    		Section s = c.findSection(val);
+                    		Section s = c.findSectionByName(val);
                         	
                         	mvc.changeCenterContent(s);
                     	}
                     	
                     }
                     else {
-                    	City c = cities.findCity(treeItem.getValue());
+                    	City c = cities.getCity(treeItem.getValue());
                     	if(c != null){
                     		String displayHTML = c.getSummaryContent()+"<br/>";
                     		

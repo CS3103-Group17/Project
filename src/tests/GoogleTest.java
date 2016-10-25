@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import google.GoogleSearch;
+import api.travels.GoogleSearch;
 import model.ImageData;
 
 public class GoogleTest {

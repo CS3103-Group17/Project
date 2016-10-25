@@ -46,5 +46,15 @@ public class Section {
 		this.content = content;
 	}
 	
-	
+    @Override
+    public String toString() {
+        String result;
+        
+        result  = "Name: " + name + "\n";
+        result += "Number: " + number + "\n";
+        result += "Index: " + Integer.toString(index) + "\n";
+        result += "Content: " + content + "\n";
+        
+        return result;
+    }	
 }

@@ -15,7 +15,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import model.ImageData;
 import model.Section;
-import utils.ContentParser;
+import util.ContentParser;
 
 public class CenterPaneController {
 

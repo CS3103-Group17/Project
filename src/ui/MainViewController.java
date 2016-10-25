@@ -6,10 +6,13 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import main.DataController;
 import model.ImageData;
 import model.Section;
-import storage.Storage;
+import storage.DataController;
+import util.concurrent.CategoryThreadController;
+
+import util.Constants.Category;
+import model.SearchField;
 
 public class MainViewController {
 
@@ -22,17 +25,16 @@ public class MainViewController {
 	private LeftPaneController leftCon;
 	private CenterPaneController centerCon;
 	
-	private DataController dataCon;
+	private DataController dataController = DataController.INSTANCE;
+	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
 	
 	private final double WINDOW_WIDTH = 1000.0;
 	private final double WINDOW_HEIGHT = 600.0;
 
 	// @@author A0139963N
-	public MainViewController(Storage s) {
-		dataCon = new DataController(s);
-		
+	public MainViewController() {
 		topCon = new TopPaneController(this);
-		leftCon = new LeftPaneController(s.getDisplayCities(), this);
+		leftCon = new LeftPaneController(dataController.getDisplayCities(), this);
 		centerCon = new CenterPaneController();
 	}
 
@@ -84,8 +86,9 @@ public class MainViewController {
 	}
 	
 	public void search(String keyword){
-		dataCon.searchPage(keyword);
-		setUpLeftPane();
+	    threadController.execute(Category.ALL, new SearchField(keyword));
+	    
+	    setUpLeftPane();
 	}
 	
 	public void changeCenterContent(Section s){

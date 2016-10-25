@@ -6,20 +6,20 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import model.Cities;
-import model.City;
-import model.History;
+import model.SearchHistory;
 import model.Page;
 import model.Section;
-import storage.DiskIO;
+import model.travels.Cities;
+import model.travels.City;
+import storage.PersistentStorage;
 
 public class StorageTest {
 
 	@Test
 	public void citiesStoreTest() {
-		DiskIO store = new DiskIO("test");
+		PersistentStorage store = new PersistentStorage("test");
 		Cities cities = new Cities();
-		History history = new History();
+		SearchHistory history = new SearchHistory();
 		City c = new City();
 		c.addSection(new Section("Getting Around", "1", 1));
 		cities.addCity(c);
@@ -36,15 +36,15 @@ public class StorageTest {
 	
 	@Test
 	public void historyStoreTest() {
-		DiskIO store = new DiskIO("test");
+		PersistentStorage store = new PersistentStorage("test");
 		Cities cities = new Cities();
-		History history = new History();
+		SearchHistory history = new SearchHistory();
 		Page p = new Page(123, "Test Page");
 		history.addToHistory(p);
 		
 		store.save(cities, history);
 		
-		History newHistory = store.loadHistory();
+		SearchHistory newHistory = store.loadHistory();
 		assert(newHistory.checkIfVisited(p));
 		
 		store.deleteFile();

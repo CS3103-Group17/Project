@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import model.City;
+import api.travels.WikitravelCrawler;
 import model.Page;
 import model.Section;
-import wikitravel.WikitravelCrawler;
+import model.travels.City;
 
 public class WikitravelTest {
 

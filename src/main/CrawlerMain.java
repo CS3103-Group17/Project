@@ -1,29 +1,35 @@
 package main;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import storage.Storage;
+
+import storage.PersistentStorage;
 import ui.MainViewController;
 
-
 public class CrawlerMain extends Application {
-
-	private MainViewController mainViewController;
-	private final String APPLICATION_NAME = "Travel Crawler";
-
-	private Storage s;
-
+    private static final String APPLICATION_NAME = "Travel Crawler";
+    
+	private static MainViewController mainViewController;
+	
 	public static void main(String[] args) {
-		launch(args);
+	    initComponents();
+		    
+	    launch(args);
 	}
 
+	/* Initialize all the prerequisites of the program here. */
+	public static void initComponents() {
+	    PersistentStorage.INSTANCE.loadAllStorage();
+	}
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		s = new Storage();
+	    mainViewController = new MainViewController();
+	    
+	    primaryStage.setTitle(APPLICATION_NAME);
 		
-		mainViewController = new MainViewController(s);
-		primaryStage.setTitle(APPLICATION_NAME);
 		showMainView(primaryStage);
 	}
 	
