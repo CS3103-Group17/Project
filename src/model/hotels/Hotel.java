@@ -11,6 +11,7 @@ public class Hotel {
 	private float totalPrice;
 	private String rateCurrencyCode;
 	private String roomDescription;
+	private String url;
 	NumberFormat formatter = new DecimalFormat("#0.00");
 	
 	//not used atm
@@ -25,7 +26,7 @@ public class Hotel {
 	private String shortDescription;
 	
 	public Hotel(String name, String address1, 
-			float totalPrice, String rateCurrencyCode, String roomDescription) {
+			float totalPrice, String rateCurrencyCode, String roomDescription, String url) {
 
 		this.name  = name;
 		this.name  = name;
@@ -33,6 +34,7 @@ public class Hotel {
 		this.roomDescription = roomDescription;
 		this.totalPrice  = totalPrice;
 		this.rateCurrencyCode  = rateCurrencyCode;
+		this.url = url;
 	}
 	
 	/*
@@ -111,10 +113,13 @@ public class Hotel {
 	public String getshortDescription() {
 		return shortDescription;
 	}
+	public String getURL() {
+		return url;
+	}
 
 
 	public String toString(){
-		return "Name: "+name +"\nAddress: "+ address1  +"\nTotal Price: "+ totalPrice  +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\n";
+		return "Name: "+name +"\nAddress: "+ address1  +"\nTotal Price: "+ totalPrice  +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\nImage URL:"+url+"\n";
 		//return "Name: "+name +"\nAddress: "+ address1  +"\nHigh rate: "+ highRate  +rateCurrencyCode+"\nLow rate: "+ lowRate +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\n";
 		/*
 		return "#"+hotelId+" "+", "+name+" @"+city+","+countryCode+", "+address1+"\n"

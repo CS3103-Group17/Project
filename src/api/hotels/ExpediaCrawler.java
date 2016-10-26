@@ -121,7 +121,8 @@ public class ExpediaCrawler {
 		
 		String roomDescription = map.getJSONObject("RoomRateDetailsList").getJSONObject("RoomRateDetails").getString("roomDescription");
 		//HotelData mydata = new HotelData(name, address1, highRate, lowRate, rateCurrencyCode, roomDescription);
-		Hotel mydata = new Hotel(name, address1, totalRate, rateCurrencyCode, roomDescription);
+		String url = "http://exp.cdn-hotels.com" + map.getString("thumbNailUrl"); //This is only a 70x70 pix image
+		Hotel mydata = new Hotel(name, address1, totalRate, rateCurrencyCode, roomDescription, url);
 		//System.out.println(mydata);
 		return mydata;
 	}
