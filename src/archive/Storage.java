@@ -41,9 +41,9 @@ public class Storage {
 	}
 	
 	public void addFromCityToDisplayCity(Page p){
-		displayCities.addCity(cities.findCity(p.getPageTitle()));
+		displayCities.addCity(cities.getCity(p.getPageTitle()));
 	}
-	
+/*	
 	public void save(){
 		disk.save(cities, history);
 	}
@@ -55,5 +55,5 @@ public class Storage {
 	public boolean checkIfVisited(Page p){
 		return history.checkIfVisited(p);
 	}
-	
+	*/
 }
