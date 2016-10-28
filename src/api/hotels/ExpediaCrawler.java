@@ -40,7 +40,7 @@ public class ExpediaCrawler {
 	String apikey = "3ogl1d5scbaggl6g4gpu4eehh4";
 	String secret = "2nbr7o4j17vl8";
 	int numberOfResults = 10;
-
+	
 	public ArrayList<Hotel> getHotels(String destination) {
 		
 		ArrayList<Hotel> dataSet = new ArrayList<Hotel>();
@@ -77,7 +77,11 @@ public class ExpediaCrawler {
 	        //request.addHeader("content-type", "application/json");
 	        HttpResponse response = httpClient.execute(request);
 	        HttpEntity entity = response.getEntity();
-
+	        
+	        if(response.getStatusLine().getStatusCode() != 200) {
+	        	return dataSet;
+	        }
+	        
 	        if (entity != null) {
 
 	            InputStream instream = entity.getContent();
