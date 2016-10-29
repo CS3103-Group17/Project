@@ -8,10 +8,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.ImageData;
 import model.Section;
-import util.concurrent.CategoryThreadController;
-
-import util.Constants.Category;
-import model.SearchField;
 
 public class MainViewController {
 

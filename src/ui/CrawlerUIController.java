@@ -5,8 +5,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DateCell;
@@ -28,7 +26,6 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 
-import main.DataController;
 import model.ImageData;
 import model.SearchField;
 import model.Section;
@@ -75,8 +72,7 @@ public class CrawlerUIController {
 	private ArrayList<City> displayCities;
 	
 	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
-	private DataController dataController = DataController.INSTANCE;
-	
+
 	@FXML
 	public void initialize() {
 	    displayTilePane = new TilePane();

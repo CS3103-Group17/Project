@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import storage.PersistentStorage;
-import util.concurrent.CategoryThreadController;
 
 public class CrawlerMain extends Application {
     private static final String APPLICATION_FXML_FILEPATH = "../ui/CrawlerUI.fxml";

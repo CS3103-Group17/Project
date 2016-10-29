@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 import main.DataController;
 import model.SearchField;
 import model.SearchHistory;
-import ui.CrawlerUIController;
 import util.Constants.Action;
 import util.Constants.Category;
 import util.Constants.Hotels;
