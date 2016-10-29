@@ -70,6 +70,8 @@ public class CrawlerUIController {
 	private TreeItem<String> socialsItem;
     
 	private ArrayList<City> displayCities;
+	private int hotelCounter;
+	private String hotelHtml;
 	
 	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
 
@@ -82,6 +84,8 @@ public class CrawlerUIController {
 	    displayWebView = new WebView();
 	    
 	    displayCities = new ArrayList<City>();
+	    hotelCounter = 0;
+	    hotelHtml = "";
 	    
 	    setTravelLocation();
         setArrivalDate();
@@ -134,7 +138,26 @@ public class CrawlerUIController {
     }
 
     public void setHotelItem(Hotel hotel) {
-
+        if(hotelCounter % 3 == 0) {
+            hotelHtml += "<div id=\"pricing-table\" class=\"clear\">\r\n";
+        }
+        
+        hotelHtml += "\t<div class=\"plan\">\r\n        ";
+        hotelHtml += "<h3>" + hotel.getname();
+        hotelHtml += "<span>S$" + hotel.gettotalPrice() + "</span>";
+        hotelHtml += "</h3>\r\n        ";
+        hotelHtml += "<img style=\"margin: 3px 3px;\" src=\"" + hotel.getURL() + "\" width=\"140\" height=\"140\" />       \r\n        ";
+        hotelHtml += "<ul>\r\n            ";
+        hotelHtml += "<li><b>Address</b></br> " + hotel.getaddress() + "</li>\r\n            ";
+        hotelHtml += "<li><b>Description</b></br> " + hotel.getroomDescription() + "</li>\t\t\r\n        ";
+        hotelHtml += "</ul> \r\n    ";
+        hotelHtml += "</div>\r\n";
+        
+        if(hotelCounter % 3 == 2) {
+            hotelHtml += "</div>\r\n";
+        }
+        
+        hotelCounter = (hotelCounter + 1) % 3;
     }
     
     public void setSocialItem(InstagramData instagram) {
@@ -160,6 +183,8 @@ public class CrawlerUIController {
             if (!pointOfInterestTextField.getText().trim().isEmpty()) {
                 searchField.setPointOfInterest(pointOfInterestTextField.getText());
             }
+            
+            travelLocationTreeView.getRoot().setExpanded(true);
             
             disableSearch();
             new Thread(new DisplayThread(this)).start();
@@ -196,14 +221,21 @@ public class CrawlerUIController {
                     TreeItem<String> treeCellItem = treeCell.getTreeItem();
                     
                     /* If root or root's children, do nothing. */
-                    if (treeCellItem.getParent() == null || treeCellItem.getParent().getParent() == null) {
+                    if (treeCellItem.getParent() == null) {
                         return;
                     }
                     
-                    /* Find the child's ancestor. */
+                    
                     TreeItem<String> parent = treeCellItem.getParent();
-                    while (!parent.getParent().getValue().equals("Travel location")) {
-                        parent = parent.getParent();
+                    
+                    /* If not null, means at 3rd level or below. */
+                    if (parent.getParent() != null) {
+                        /* Find the child's ancestor. */
+                        while (!parent.getParent().getValue().equals("Travel location")) {
+                            parent = parent.getParent();
+                        }
+                    } else {
+                        parent = treeCellItem;
                     }
 
                     switch (parent.getValue()) {
@@ -215,7 +247,7 @@ public class CrawlerUIController {
                             break;
                             
                         case "Hotels":
-                            setHotelItemDisplay(treeCellItem);
+                            setHotelItemDisplay();
                             break;
                             
                         case "Socials":
@@ -230,6 +262,10 @@ public class CrawlerUIController {
 	}
 	
 	private void setCityItemDisplay(TreeItem<String> cityItem) {
+	    if (cityItem.getValue().equals("Information")) {
+	        return;
+	    }
+	    
 	    String css = "<link rel=\"stylesheet\" href=\"http://wikitravel.org/mw/skins/common/commonContent.css\" />";
 	    
 	    City city = null;
@@ -274,12 +310,19 @@ public class CrawlerUIController {
 	    }
 	}
 	
-	private void setHotelItemDisplay(TreeItem<String> hotelItem) {
-	    
+	private void setHotelItemDisplay() {
+        String html = "<html>\r\n<head>\r\n\t<style type=\"text/css\">\r\n\tbody{\r\n  background: #fff;\r\n}\r\n\r\n#pricing-table {\r\n\tmargin: 10px auto;\r\n\ttext-align: center;\r\n\twidth: 670px; /* total computed width = 222 x 3 + 226 */\r\n\tborder: 1px solid #ddd;\r\n}\r\n\r\n#pricing-table .plan {\r\n\tfont: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;\r\n\ttext-shadow: 0 1px rgba(255,255,255,.8);        \r\n\tbackground: #fff;      \r\n\tborder: 1px solid #ddd;\r\n\tcolor: #333;\r\n\tpadding: 20px;\r\n\twidth: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      \r\n\tfloat: left;\r\n\tposition: relative;\r\n}\r\n\r\n#pricing-table #most-popular {\r\n\tz-index: 2;\r\n\ttop: -13px;\r\n\tborder-width: 3px;\r\n\tpadding: 20px 20px;\r\n\t-moz-border-radius: 5px;\r\n\t-webkit-border-radius: 5px;\r\n\tborder-radius: 5px;\r\n\t-moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\t-webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\tbox-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    \r\n}\r\n\r\n#pricing-table .plan:nth-child(1) {\r\n\t-moz-border-radius: 5px 0 0 5px;\r\n\t-webkit-border-radius: 5px 0 0 5px;\r\n\tborder-radius: 5px 0 0 5px;        \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) {\r\n\t-moz-border-radius: 0 5px 5px 0;\r\n\t-webkit-border-radius: 0 5px 5px 0;\r\n\tborder-radius: 0 5px 5px 0;        \r\n}\r\n\r\n/* --------------- */\t\r\n\r\n#pricing-table h3 {\r\n\tfont-size: 20px;\r\n\tfont-weight: normal;\r\n\tpadding: 15px;\r\n\tmargin: -20px -20px 50px -20px;\r\n\tbackground-color: #eee;\r\n\tbackground-image: -moz-linear-gradient(#fff,#eee);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    \r\n\tbackground-image: -webkit-linear-gradient(#fff, #eee);\r\n\tbackground-image: -o-linear-gradient(#fff, #eee);\r\n\tbackground-image: -ms-linear-gradient(#fff, #eee);\r\n\tbackground-image: linear-gradient(#fff, #eee);\r\n}\r\n\r\n#pricing-table #most-popular h3 {\r\n\tbackground-color: #ddd;\r\n\tbackground-image: -moz-linear-gradient(#eee,#ddd);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));    \r\n\tbackground-image: -webkit-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -o-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -ms-linear-gradient(#eee, #ddd);\r\n\tbackground-image: linear-gradient(#eee, #ddd);\r\n\tmargin-top: -30px;\r\n\tpadding-top: 30px;\r\n\t-moz-border-radius: 5px 5px 0 0;\r\n\t-webkit-border-radius: 5px 5px 0 0;\r\n\tborder-radius: 5px 5px 0 0; \t\t\r\n}\r\n\r\n#pricing-table .plan:nth-child(1) h3 {\r\n\t-moz-border-radius: 5px 0 0 0;\r\n\t-webkit-border-radius: 5px 0 0 0;\r\n\tborder-radius: 5px 0 0 0;       \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) h3 {\r\n\t-moz-border-radius: 0 5px 0 0;\r\n\t-webkit-border-radius: 0 5px 0 0;\r\n\tborder-radius: 0 5px 0 0;       \r\n}\t\r\n\r\n#pricing-table h3 span {\r\n\tdisplay: block;\r\n\tfont: bold 25px/100px Georgia, Serif;\r\n\tcolor: #777;\r\n\tbackground: #fff;\r\n\tborder: 5px solid #fff;\r\n\theight: 120px;\r\n\twidth: 120px;\r\n\tmargin: 5px auto -65px;\r\n\t-moz-border-radius: 100px;\r\n\t-webkit-border-radius: 100px;\r\n\tborder-radius: 100px;\r\n\t-moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\t-webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\tbox-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n}\r\n\r\n/* --------------- */\r\n\r\n#pricing-table ul {\r\n\tmargin: 20px 0 0 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n}\r\n\r\n#pricing-table li {\r\n\tborder-top: 1px solid #ddd;\r\n\tpadding: 10px 0;\r\n}\r\n\r\n/* --------------- */\r\n\t\r\n#pricing-table .signup {\r\n\tposition: relative;\r\n\tpadding: 8px 20px;\r\n\tmargin: 20px 0 0 0;  \r\n\tcolor: #fff;\r\n\tfont: bold 14px Arial, Helvetica;\r\n\ttext-transform: uppercase;\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;       \r\n\tbackground-color: #72ce3f;\r\n\tbackground-image: -moz-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#72ce3f), to(#62bc30));    \r\n\tbackground-image: -webkit-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -o-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -ms-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: linear-gradient(#72ce3f, #62bc30);\r\n\t-moz-border-radius: 3px;\r\n\t-webkit-border-radius: 3px;\r\n\tborder-radius: 3px;     \r\n\ttext-shadow: 0 1px 0 rgba(0,0,0,.3);        \r\n\t-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\t-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\tbox-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n}\r\n\r\n#pricing-table .signup:hover {\r\n\tbackground-color: #62bc30;\r\n\tbackground-image: -moz-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#62bc30), to(#72ce3f));      \r\n\tbackground-image: -webkit-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -o-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -ms-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: linear-gradient(#62bc30, #72ce3f); \r\n}\r\n\r\n#pricing-table .signup:active, #pricing-table .signup:focus {\r\n\tbackground: #62bc30;       \r\n\ttop: 2px;\r\n\t-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\t-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\tbox-shadow: 0 0 3px rgba(0, 0, 0, .7) inset; \r\n}\r\n\r\n/* --------------- */\r\n\r\n.clear:before, .clear:after {\r\n  content:\"\";\r\n  display:table\r\n}\r\n\r\n.clear:after {\r\n  clear:both\r\n}\r\n\r\n.clear {\r\n  zoom:1\r\n}\r\n\t</style>\r\n</head>\r\n<body>\r\n";
+        
+        html += hotelHtml;
+        html += "</body>\r\n</html>";
+        
+        loadWebView(html);
 	}
 	
 	private void setSocialItemDisplay(TreeItem<String> socialItem) {
-	    
+        if (socialItem.getValue().equals("Socials")) {
+            return;
+        }	    
 	}
 	
 	private void loadWebView(String html) {
