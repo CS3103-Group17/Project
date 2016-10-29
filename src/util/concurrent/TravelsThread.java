@@ -5,11 +5,11 @@ import java.util.UUID;
 
 import api.travels.GoogleSearch;
 import api.travels.WikitravelCrawler;
+import main.DataController;
 import model.Page;
 import model.SearchField;
 import model.SearchHistory;
 import model.travels.City;
-import storage.DataController;
 import util.Constants.Action;
 import util.Constants.Travels;
 
@@ -63,13 +63,13 @@ public class TravelsThread implements Runnable {
                         City city = dataController.getCity(travelsId);
                         
                         if (city != null) {
-                            dataController.addDisplayCity(city);
+                            dataController.addDisplay(city);
                         }
                     }
                 
                 /* If not, crawl the web. */
                 } else {
-                    ArrayList<Page> pages = wikitravelCrawler.getSearch(searchField.getKeyword());
+                    ArrayList<Page> pages = wikitravelCrawler.getSearch(searchField.getName());
                     
                     for (Page page : pages) {
                         String name = page.getPageTitle();
@@ -85,7 +85,7 @@ public class TravelsThread implements Runnable {
                             dataController.storeCity(city);
                         }
 
-                        dataController.addDisplayCity(city);
+                        dataController.addDisplay(city);
                         
                         threadController.getCurrentSearchHistory().addTravelsId(city.getCityId());
                     }

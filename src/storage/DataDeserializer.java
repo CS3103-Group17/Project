@@ -51,9 +51,6 @@ class SearchHistoryDeserializer implements JsonDeserializer<SearchHistory> {
         SearchHistory searchHistory = new SearchHistory(gson.fromJson(object.get("searchField").getAsJsonObject(), searchFieldType));
         
         Type idsType = new TypeToken<ArrayList<UUID>>(){}.getType();
-        
-        searchHistory.setHotelsIds(gson.fromJson(object.get("hotelsIds").getAsJsonArray(), idsType));
-        searchHistory.setSocialsIds(gson.fromJson(object.get("socialsIds").getAsJsonArray(), idsType));
         searchHistory.setTravelsIds(gson.fromJson(object.get("travelsIds").getAsJsonArray(), idsType));
 
         return searchHistory;

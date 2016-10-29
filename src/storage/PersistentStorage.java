@@ -13,6 +13,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
+import main.DataController;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import model.SearchHistory;

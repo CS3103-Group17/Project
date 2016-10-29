@@ -38,6 +38,7 @@ public class City {
 
 	public City(String name) {
 	    this();
+	    
 	    this.name = name;
 	}
 	
@@ -83,7 +84,7 @@ public class City {
 	
 	public Section findSectionByName(String name) {
 		for(Section section : sections){
-			if(section.getName().equals(name)){
+			if(section.getName().equals(name)) {
 				return section;
 			}
 		}

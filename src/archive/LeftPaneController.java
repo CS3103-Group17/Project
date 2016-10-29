@@ -1,4 +1,4 @@
-package ui;
+package archive;
 
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
@@ -17,8 +17,8 @@ public class LeftPaneController {
 	private TreeView<String> placeTree;
 	private Cities cities;
 
-	public LeftPaneController(Cities cities, MainViewController mvc){
-		this.cities = cities;
+	public LeftPaneController(MainViewController mvc){
+		this.cities = new Cities();
 		this.mvc = mvc;
 		sp = new StackPane();
 	}

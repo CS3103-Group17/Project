@@ -11,7 +11,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
-
+import twitter4j.MediaEntity;
+ 
 public class TwitterCrawler {
 	public final static String ConsumerKey = "splkcDS1sIUD73XoxojCUkAZz";
 	public final static String ConsumerSecret = "pwClsMLOBnMIGeRJXvmKUW5aFkCTOcnWo1jgN2xoIdym2dfOD5";
@@ -46,13 +47,13 @@ public class TwitterCrawler {
 				
 				for (Status tweet : tweets) {
 
-					/*
+					
 					System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText());
 					MediaEntity[] entity = tweet.getMediaEntities();
 					if(entity.length!=0){
 						System.out.println(entity[0].getMediaURL());
 					}
-					*/
+					
 					
 					Tweet temp = new Tweet(idx, tweet.getUser().getScreenName(), 
 							tweet.getText(), tweet.getSource());
@@ -85,5 +86,4 @@ public class TwitterCrawler {
 		tc.getTweets("#Singapore", 5);
 		
 	}
-
 }

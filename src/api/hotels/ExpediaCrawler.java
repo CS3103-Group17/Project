@@ -9,6 +9,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,10 +22,11 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import model.SearchField;
 import model.hotels.Hotel;
-
 
 public class ExpediaCrawler {
 	
@@ -41,7 +43,9 @@ public class ExpediaCrawler {
 	String secret = "2nbr7o4j17vl8";
 	int numberOfResults = 10;
 	
-	public ArrayList<Hotel> getHotels(String destination) {
+	public ExpediaCrawler() {}
+	
+	public ArrayList<Hotel> getHotels(SearchField searchField) {
 		
 		ArrayList<Hotel> dataSet = new ArrayList<Hotel>();
 		String ipAddress = getPublicIP();
@@ -53,17 +57,35 @@ public class ExpediaCrawler {
 		JSONObject myResult;
 		String customerSessionId = "";
 		
-		//variables
-		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-		Calendar cal = Calendar.getInstance(); 
-		cal.add(Calendar.DATE, 25);
-		String arrivalDate = format.format(cal.getTime());
-		cal.add(Calendar.DATE, 1);
-		String departureDate = format.format(cal.getTime());
+		LocalDate arrivalDate = searchField.getArrivalDate();
+		LocalDate departureDate = searchField.getDepartureDate();
+		if (arrivalDate == null) {
+		    if (departureDate != null) {
+		        arrivalDate = departureDate.minusDays(1);
+		    } else {
+		        arrivalDate = LocalDate.now();
+		    }
+		}
 		
-		String xml = "<HotelListRequest><arrivalDate>"+arrivalDate+"</arrivalDate><departureDate>"+departureDate+"</departureDate><RoomGroup>";
-		xml += "<Room><numberOfAdults>1</numberOfAdults></Room>";
-		xml += "</RoomGroup><city>"+destination+"</city><countryCode></countryCode><numberOfResults>"+numberOfResults+"</numberOfResults></HotelListRequest>";
+		if (departureDate == null) {
+		    arrivalDate.plusDays(1);
+		}
+		
+		String xml = "<HotelListRequest>";
+		
+		xml += "<arrivalDate>" + arrivalDate + "</arrivalDate>";
+		xml += "<departureDate>" + departureDate + "</departureDate>";
+		
+		xml += "<RoomGroup><Room>";
+		xml += "<numberOfAdults>" + 1 + "</numberOfAdults>";
+		xml += "</Room></RoomGroup>";
+		
+		xml += "<city>" + searchField.getName() + "</city>";
+		xml += "<countryCode></countryCode>";
+		xml += "<numberOfResults>" + numberOfResults + "</numberOfResults>";
+		
+		xml += "</HotelListRequest>";
+		
 		xml = translateXmlToUrl(xml);
 				
 		try {
@@ -99,8 +121,12 @@ public class ExpediaCrawler {
 	        
 	        JSONArray tempArray = myResult.getJSONObject("HotelListResponse").getJSONObject("HotelList").getJSONArray("HotelSummary");
 	        for (int i = 0; i < tempArray.length(); i++) {
-	        	JSONObject temp = tempArray.getJSONObject(i);
-	        	dataSet.add(extractDetails(temp));	
+	        	try {
+	        	    JSONObject temp = tempArray.getJSONObject(i);
+	        	    dataSet.add(extractDetails(temp));
+	        	} catch (JSONException ex) {
+	        	    System.out.println("No RoomRateDetails");
+	        	}
 	        }
 	      
 	    } catch (ClientProtocolException e1) {
