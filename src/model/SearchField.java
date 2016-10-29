@@ -60,6 +60,10 @@ public class SearchField {
         this.pointOfInterest = pointOfInterest;
     }
     
+    public DateTimeFormatter getDateFormatter() {
+        return dateFormatter;
+    }
+    
     @Override
     public boolean equals(Object object) {
         if (this == object) {

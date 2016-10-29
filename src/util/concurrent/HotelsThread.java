@@ -52,7 +52,7 @@ public class HotelsThread implements Runnable {
                 for (Hotel hotel : hotels) {
                     dataController.addDisplay(hotel);
                 }
-                System.out.println("HERE");
+
                 break;
         }
     }
