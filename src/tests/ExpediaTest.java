@@ -8,7 +8,6 @@ public class ExpediaTest {
 		ExpediaCrawler myExpedia = new ExpediaCrawler();
 		myExpedia.getHotelsTest("Seoul");
 		System.out.println(myExpedia.generateHTML());
-
 	}
 
 }
