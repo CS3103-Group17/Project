@@ -116,7 +116,9 @@ public class Hotel {
 	public String getURL() {
 		return url;
 	}
-
+	public float gettotalPrice() {
+		return totalPrice;
+	}
 
 	public String toString(){
 		return "Name: "+name +"\nAddress: "+ address1  +"\nTotal Price: "+ totalPrice  +rateCurrencyCode+"\nRoom Description: "+roomDescription+"\nImage URL:"+url+"\n";
