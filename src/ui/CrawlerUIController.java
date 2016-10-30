@@ -184,6 +184,9 @@ public class CrawlerUIController {
                 searchField.setPointOfInterest(pointOfInterestTextField.getText());
             }
             
+            hotelCounter = 0;
+            hotelHtml = "";
+            
             travelLocationTreeView.getRoot().setExpanded(true);
             
             disableSearch();
