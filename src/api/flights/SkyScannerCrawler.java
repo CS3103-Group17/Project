@@ -1,10 +1,19 @@
 package api.flights;
 
+import java.util.Iterator;
+
+import org.json.JSONObject;
+import org.json.XML;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.parser.Parser;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
+
+import util.ContentParser;
 
 public class SkyScannerCrawler {
 
@@ -47,6 +56,17 @@ public class SkyScannerCrawler {
 		try {
 			HttpResponse<JsonNode> response = Unirest.get(url).
 			        asJson();
+			
+			JSONObject json = new JSONObject(response.getBody().toString());
+			Document doc = Jsoup.parse(XML.toString(json), "", Parser.xmlParser());
+
+			Iterator<Element> sections = doc.select("ImageUrl").iterator();
+			String sectionContent = "";
+			while(sections.hasNext()){
+				Element sectionCon = sections.next();
+				sectionContent = sectionCon.html();
+				System.out.println(sectionContent);
+			}
 			
 			//TODO: Parse JSON File
 			
