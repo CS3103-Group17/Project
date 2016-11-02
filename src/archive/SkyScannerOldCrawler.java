@@ -1,4 +1,4 @@
-package api.flights;
+package archive;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.JSONObject;
 
-public class SkyScannerCrawler {
+public class SkyScannerOldCrawler {
 
 	public final static String apiKey = "ad613298088404736599107030638844";
 	public final static String market = "SG";
@@ -24,7 +24,6 @@ public class SkyScannerCrawler {
 	public final static String checkOut = "2016-11-02";
 	public final static String pax = "2";
 	public final static String rooms = "1";
-	
 	
 	public static void main(String[] args) {
 		HttpClient httpClient = HttpClientBuilder.create().build();
