@@ -10,6 +10,7 @@ import model.SearchHistory;
 import util.Constants.Action;
 import util.Constants.Category;
 import util.Constants.Hotels;
+import util.Constants.Socials;
 import util.Constants.Travels;
 import util.concurrent.TravelsThread;
 
@@ -80,6 +81,10 @@ public class CategoryThreadController {
                 
                 for (Hotels hotels : Hotels.values()) {
                     threadPool.execute(new HotelsThread(hotels, action));
+                }
+                
+                for (Socials socials : Socials.values()) {
+                    threadPool.execute(new SocialsThread(socials, action));
                 }
                 
                 break;

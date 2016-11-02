@@ -119,14 +119,14 @@ public class WikitravelCrawler {
 			
 			section.setContent(sectionContent);
 			
-			Iterator<Element> images = doc.select("img").iterator();
+			/*Iterator<Element> images = doc.select("img").iterator();
 			while(images.hasNext()){
 				Element imageElement = images.next();
 				ImageData id = getImageData(imageElement.html());
 				
 				if(id != null)
 					city.addImage(id);
-			}
+			}*/
 			
 			System.out.println(section.getContent());
 			return true;
@@ -160,14 +160,14 @@ public class WikitravelCrawler {
 				System.out.println(sectionContent);
 			}
 			
-			Iterator<Element> images = doc.select("img").iterator();
+			/*Iterator<Element> images = doc.select("img").iterator();
 			while(images.hasNext()){
 				Element imageElement = images.next();
 				ImageData id = getImageData(imageElement.html());
 				
 				if(id != null)
 					city.addImage(id);
-			}
+			}*/
 			
 			city.setSummaryContent(sectionContent);
 		} catch (Exception e) {

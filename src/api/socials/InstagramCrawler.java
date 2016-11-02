@@ -59,10 +59,4 @@ public class InstagramCrawler {
 		return list;
 	}
 	
-	/*
-	public static void main(String args[]){
-		InstagramCrawler igCrawler = new InstagramCrawler();
-		igCrawler.getIgPosts("Singapore");
-	}
-	*/
 }

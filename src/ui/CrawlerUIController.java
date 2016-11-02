@@ -70,8 +70,12 @@ public class CrawlerUIController {
 	private TreeItem<String> socialsItem;
     
 	private ArrayList<City> displayCities;
+	
 	private int hotelCounter;
 	private String hotelHtml;
+	
+	private int socialCounter;
+	private String socialHtml;
 	
 	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
 
@@ -86,6 +90,7 @@ public class CrawlerUIController {
 	    displayCities = new ArrayList<City>();
 	    hotelCounter = 0;
 	    hotelHtml = "";
+	    socialHtml = "";
 	    
 	    setTravelLocation();
         setArrivalDate();
@@ -161,11 +166,26 @@ public class CrawlerUIController {
     }
     
     public void setSocialItem(InstagramData instagram) {
+    	socialHtml += "<blockquote class=\"twitter-tweet\">\r\n";
+    	socialHtml += "\t<div>\r\n        ";
+        socialHtml += "<img style=\"margin: 10px 10px;\" src=\"" + instagram.getImageURL() + "\" width=\"300\"/>       \r\n        ";
+        socialHtml += "<ul>\r\n            ";
+        socialHtml += "<p>@"+instagram.getUserHandle()+"</br> " + instagram.getCaption() + "</p>\r\n            ";
+        socialHtml += "</ul> \r\n    ";
+        socialHtml += "</div>\r\n";
+        socialHtml += "</blockquote>\r\n";
         
     }
     
     public void setSocialItem(Tweet tweet) {
-        
+    	socialHtml += "<blockquote class=\"twitter-tweet\">\r\n";
+    	socialHtml += "\t<div>\r\n        ";
+        socialHtml += "<img style=\"margin: 10px 10px;\" src=\"" + tweet.getImageURL() + "\" width=\"300\"/>       \r\n        ";
+        socialHtml += "<ul>\r\n            ";
+        socialHtml += "<p>@"+tweet.getUserHandle()+"</br> " + tweet.getText() + "</p>\r\n            ";
+        socialHtml += "</ul> \r\n    ";
+        socialHtml += "</div>\r\n";
+        socialHtml += "</blockquote>\r\n";
     }	
 	
 	private void search() {
@@ -186,6 +206,8 @@ public class CrawlerUIController {
             
             hotelCounter = 0;
             hotelHtml = "";
+
+            socialHtml = "";
             
             travelLocationTreeView.getRoot().setExpanded(true);
             
@@ -254,7 +276,7 @@ public class CrawlerUIController {
                             break;
                             
                         case "Socials":
-                            setSocialItemDisplay(treeCellItem);
+                            setSocialItemDisplay();
                             break;
                     }
                 }
@@ -322,10 +344,19 @@ public class CrawlerUIController {
         loadWebView(html);
 	}
 	
-	private void setSocialItemDisplay(TreeItem<String> socialItem) {
-        if (socialItem.getValue().equals("Socials")) {
-            return;
-        }	    
+	private void setSocialItemDisplay() {
+		String html = "<html>\r\n<head>\r\n\t<style type=\"text/css\">";
+		html += "blockquote.twitter-tweet { display: inline-block; font-family: \"Helvetica Neue\", Roboto, \"Segoe UI\", Calibri, sans-serif;";
+		html += "font-size: 12px; font-weight: bold; line-height: 16px; border-color: #eee #ddd #bbb; border-radius: 5px; border-style: solid; border-width: 1px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); margin: 10px 5px; padding: 0 16px 16px 16px; max-width: 468px; }";
+		html += "blockquote.twitter-tweet p { font-size: 16px; font-weight: normal; line-height: 20px; }";
+		html += "blockquote.twitter-tweet a { color: inherit; font-weight: normal; text-decoration: none; outline: 0 none; }";
+		html += "blockquote.twitter-tweet a:hover, blockquote.twitter-tweet a:focus { text-decoration: underline;}";
+	    html += "</style>\r\n</head>\r\n<body>\r\n";
+        
+        html += socialHtml;
+        html += "</body>\r\n</html>";
+        
+        loadWebView(html);   
 	}
 	
 	private void loadWebView(String html) {
