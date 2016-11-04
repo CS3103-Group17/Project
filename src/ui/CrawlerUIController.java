@@ -36,6 +36,7 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 
+import main.DataController;
 import model.ImageData;
 import model.SearchField;
 import model.Section;
@@ -100,7 +101,8 @@ public class CrawlerUIController {
 	private String socialHtml;
 	
 	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
-
+	private DataController dataController = DataController.INSTANCE;
+	
 	@FXML
 	public void initialize() {
 	    displayTilePane = new TilePane();
@@ -286,6 +288,12 @@ public class CrawlerUIController {
 
             socialHtml = "";
             
+            for (TreeItem<String> treeItem : travelLocationTreeView.getRoot().getChildren()) {
+                if (treeItem.getValue().equals("Information")) {
+                    treeItem.getChildren().clear();
+                }
+            }
+            
             travelLocationTreeView.getRoot().setExpanded(true);
             
             disableSearch();
@@ -329,7 +337,6 @@ public class CrawlerUIController {
                         return;
                     }
                     
-                    
                     TreeItem<String> parent = treeCellItem.getParent();
                     
                     /* If not null, means at 3rd level or below. */
@@ -370,8 +377,6 @@ public class CrawlerUIController {
 	}
 	
 	private void setCityItemDisplay(TreeItem<String> cityItem) {
-	    
-	    
 	    String css = "<link rel=\"stylesheet\" href=\"http://wikitravel.org/mw/skins/common/commonContent.css\" />";
 	    
 	    City city = null;
@@ -448,6 +453,7 @@ public class CrawlerUIController {
 		if(flightHtml.equals("")){
 			errorLbl.setText("Please set Destination & Departure & Arrival Date & Origin City");
 			dg.show();
+			return;
 		}
 		
         html += flightHtml;
