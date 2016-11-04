@@ -60,10 +60,12 @@ public class FlightsThread implements Runnable {
             	String url = skyscannerCrawler.createFlightSession(search);
             	Itineraries itineraries = skyscannerCrawler.getFlightDetails(url);
                 
-            	for (Itinerary itinerary : itineraries.getItineraries()) {
-                    dataController.addDisplay(itinerary);
-                }
-
+            	if(itineraries.getItineraries() != null){
+            		for (Itinerary itinerary : itineraries.getItineraries()) {
+                        dataController.addDisplay(itinerary);
+                    }
+            	}
+            	
                 break;
         }
     }

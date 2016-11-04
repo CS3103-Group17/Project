@@ -105,6 +105,10 @@ public class SkyScannerCrawler {
 			Document doc = Jsoup.parse(XML.toString(json), "", Parser.xmlParser());
 			
 			Iterator<Element> placesElements = doc.select("places").iterator();
+			
+			if(!placesElements.hasNext())
+				return null;
+			
 			Element place = placesElements.next();
 			placeID = place.select("placeid").html();
 			

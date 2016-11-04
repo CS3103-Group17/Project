@@ -83,10 +83,12 @@ public class SocialsThread implements Runnable {
             case SEARCH:
             	ArrayList<InstagramData> instas = instaCrawler.getIgPosts(threadController.getCurrentSearchField().getName());
                 
-            	for (InstagramData insta : instas) {
-                    dataController.addDisplay(insta);
-                }
-
+            	if(instas != null){
+            		for (InstagramData insta : instas) {
+                        dataController.addDisplay(insta);
+                    }
+            	}
+            	
                 break;
         }
     }
