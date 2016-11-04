@@ -16,7 +16,7 @@ public class WikitravelTest {
 	@Test
 	public void sectionsTest() {
 		WikitravelCrawler wc = new WikitravelCrawler();
-		String pageTitle = "San%20Francisco";
+		String pageTitle = "San Francisco";
 		ArrayList<Section> swList = wc.getSections(pageTitle);
 		String swResult = "";
 		
@@ -38,7 +38,7 @@ public class WikitravelTest {
 	@Test
 	public void sectionContentTest(){
 		WikitravelCrawler wc = new WikitravelCrawler();
-		String pageTitle = "San%20Francisco";
+		String pageTitle = "San Francisco";
 		Section history = new Section("History", "2.1", 3);
 		
 		wc.getSectionContent(pageTitle, history, new City("Singapore"));
@@ -54,6 +54,15 @@ public class WikitravelTest {
 		
 		assert(c.getName().equals("San Francisco"));
 		assertEquals("Climate", c.getSections().get(3).getName());
+	}
+	
+	@Test
+	public void searchTest(){
+		WikitravelCrawler wc = new WikitravelCrawler();
+		String cityName = "san francisco";
+		ArrayList<Page> c = wc.getSearch(cityName);
+		
+		assert(c.get(0).getPageTitle().equals("San Francisco"));
 	}
 
 }

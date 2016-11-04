@@ -26,6 +26,7 @@ import org.json.JSONObject;
 
 import model.SearchField;
 import model.hotels.Hotel;
+import util.ContentParser;
 
 public class ExpediaCrawler {
 	
@@ -79,7 +80,7 @@ public class ExpediaCrawler {
 		xml += "<numberOfAdults>" + 1 + "</numberOfAdults>";
 		xml += "</Room></RoomGroup>";
 		
-		xml += "<city>" + searchField.getName() + "</city>";
+		xml += "<city>" + ContentParser.encodeIntoURL(searchField.getName()) + "</city>";
 		xml += "<countryCode></countryCode>";
 		xml += "<numberOfResults>" + numberOfResults + "</numberOfResults>";
 		
