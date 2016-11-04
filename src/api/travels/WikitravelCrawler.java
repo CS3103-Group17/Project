@@ -128,7 +128,7 @@ public class WikitravelCrawler {
 					city.addImage(id);
 			}*/
 			
-			System.out.println(section.getContent());
+			//System.out.println(section.getContent());
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,7 +157,7 @@ public class WikitravelCrawler {
 			while(sections.hasNext()){
 				Element sectionCon = sections.next();
 				sectionContent = ContentParser.parseSummaryContent(sectionCon.html());
-				System.out.println(sectionContent);
+				//System.out.println(sectionContent);
 			}
 			
 			/*Iterator<Element> images = doc.select("img").iterator();

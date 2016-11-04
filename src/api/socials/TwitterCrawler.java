@@ -48,12 +48,8 @@ public class TwitterCrawler {
 				for (Status tweet : tweets) {
 
 					
-					System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText());
+					//System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText());
 					MediaEntity[] entity = tweet.getMediaEntities();
-					if(entity.length!=0){
-						System.out.println(entity[0].getMediaURL());
-					}
-					
 					
 					Tweet temp = new Tweet(idx, tweet.getUser().getScreenName(), 
 							tweet.getText(), tweet.getSource());

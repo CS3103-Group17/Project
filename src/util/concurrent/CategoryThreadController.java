@@ -9,6 +9,7 @@ import model.SearchField;
 import model.SearchHistory;
 import util.Constants.Action;
 import util.Constants.Category;
+import util.Constants.Flights;
 import util.Constants.Hotels;
 import util.Constants.Socials;
 import util.Constants.Travels;
@@ -85,6 +86,10 @@ public class CategoryThreadController {
                 
                 for (Socials socials : Socials.values()) {
                     threadPool.execute(new SocialsThread(socials, action));
+                }
+                
+                for (Flights flights : Flights.values()) {
+                    threadPool.execute(new FlightsThread(flights, action, searchField));
                 }
                 
                 break;
