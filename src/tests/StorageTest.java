@@ -1,4 +1,4 @@
-/*package tests;
+package tests;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,7 @@ import model.travels.City;
 import storage.PersistentStorage;
 
 public class StorageTest {
-
+/*
 	@Test
 	public void citiesStoreTest() {
 		PersistentStorage store = new PersistentStorage("test");
@@ -49,6 +49,5 @@ public class StorageTest {
 		
 		store.deleteFile();
 	}
-
-}
 */
+}
