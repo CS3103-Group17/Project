@@ -22,8 +22,8 @@ public class FacebookCrawler {
 		ArrayList<FbData> list = new ArrayList<FbData>();
 		
 		try {
-			
 			Connection<Page> publicSearch = facebookClient.fetchConnection("search", Page.class, Parameter.with("q", searchTerm), Parameter.with("type", "page"));
+			System.out.println("Crawling facebook");
 			
 			int idx = 1;
 			for (List<Page> feedConnectionPage : publicSearch) {
