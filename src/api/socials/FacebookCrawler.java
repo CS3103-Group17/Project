@@ -28,19 +28,20 @@ public class FacebookCrawler {
 			int idx = 1;
 			for (List<Page> feedConnectionPage : publicSearch) {
 				  for (Page page : feedConnectionPage) {
-					  System.out.print("@" + page.getName());
-					  Connection<Post> pageFeed = facebookClient.fetchConnection(page.getId() + "/feed", Post.class, Parameter.with("fields", "message,permalink_url,picture,full_picture"));
+//					  System.out.print("@" + page.getName());
+					  Connection<Post> pageFeed = facebookClient.fetchConnection(page.getId() + "/feed", Post.class, Parameter.with("fields", "message,permalink_url,picture,full_picture"), Parameter.with("limit", 2));
 					  for (List<Post> feed: pageFeed) {
 						  for (Post post: feed) {
 							  FbData temp = new FbData(idx, page.getName(), post.getMessage(), post.getPermalinkUrl(), post.getPicture());
-							  System.out.println(post.getMessage());
-							  System.out.println(post.getPicture());
-							  System.out.println(post.getPermalinkUrl());
+//							  System.out.println(post.getMessage());
+//							  System.out.println(post.getPicture());
+//							  System.out.println(post.getPermalinkUrl());
 							  list.add(temp);
 							  idx++;
+							  if (idx == 20) return list;
 						  }
 					  }
-					  System.out.println();
+//					  System.out.println();
 				  }
 			}
 			

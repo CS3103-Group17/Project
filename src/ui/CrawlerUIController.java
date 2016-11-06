@@ -44,6 +44,7 @@ import model.flights.Carrier;
 import model.flights.Flight;
 import model.flights.Itinerary;
 import model.hotels.Hotel;
+import model.socials.FbData;
 import model.socials.InstagramData;
 import model.socials.Tweet;
 import model.travels.City;
@@ -244,6 +245,18 @@ public class CrawlerUIController {
             
             flightCounter = (flightCounter + 1) % 3;
     	}
+    }
+    
+    public void setSocialItem(FbData facebook) {
+    	socialHtml += "<blockquote class=\"twitter-tweet\">\r\n";
+    	socialHtml += "\t<div>\r\n        ";
+        socialHtml += "<img style=\"margin: 10px 10px;\" src=\"" + facebook.getImageURL() + "\" width=\"300\"/>       \r\n        ";
+        socialHtml += "<ul>\r\n            ";
+        socialHtml += "<p>@"+facebook.getUserHandle()+"</br> " + facebook.getText() + "</p>\r\n            ";
+        socialHtml += "</ul> \r\n    ";
+        socialHtml += "</div>\r\n";
+        socialHtml += "</blockquote>\r\n";
+        
     }
     
     public void setSocialItem(InstagramData instagram) {

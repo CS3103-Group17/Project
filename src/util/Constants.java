@@ -20,7 +20,7 @@ public final class Constants {
     }
     
     public enum Socials {
-        TWITTER, INSTAGRAM
+        TWITTER, INSTAGRAM, FACEBOOK
     }
     
     public enum Travels {

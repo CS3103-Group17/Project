@@ -7,6 +7,7 @@ import main.DataController;
 import model.flights.Itineraries;
 import model.flights.Itinerary;
 import model.hotels.Hotel;
+import model.socials.FbData;
 import model.socials.InstagramData;
 import model.socials.Tweet;
 import model.travels.City;
@@ -34,6 +35,8 @@ public class DisplayThread implements Runnable {
                         uiController.setCityItem((City) object);
                     } else if (object instanceof Hotel) {
                         uiController.setHotelItem((Hotel) object);
+                    } else if ( object instanceof FbData) {
+                    	uiController.setSocialItem((FbData) object);
                     } else if (object instanceof InstagramData) {
                         uiController.setSocialItem((InstagramData) object);
                     } else if (object instanceof Itinerary) {

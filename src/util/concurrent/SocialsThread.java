@@ -3,6 +3,7 @@ package util.concurrent;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import api.socials.FacebookCrawler;
 import api.socials.InstagramCrawler;
 import api.socials.TwitterCrawler;
 import api.travels.GoogleSearch;
@@ -12,6 +13,7 @@ import model.Page;
 import model.SearchField;
 import model.SearchHistory;
 import model.hotels.Hotel;
+import model.socials.FbData;
 import model.socials.InstagramData;
 import model.socials.Tweet;
 import model.travels.City;
@@ -49,6 +51,10 @@ public class SocialsThread implements Runnable {
                 
             case INSTAGRAM:
                 crawlInstagram();
+                break;
+                
+            case FACEBOOK:
+                crawlFacebook();
                 break;
         }
     }
@@ -94,6 +100,30 @@ public class SocialsThread implements Runnable {
             	}
             	
             	
+                break;
+        }
+    }
+    
+    private void crawlFacebook() {
+        FacebookCrawler fbCrawler = new FacebookCrawler();
+        
+        /* Determine what action to perform. */
+        switch (action) {
+            default:
+                break;
+                
+            case SEARCH:
+            	try{
+            		ArrayList<FbData> fbs = fbCrawler.getFbPosts(threadController.getCurrentSearchField().getName());
+                    
+                	if(fbs != null){
+                		for (FbData fb : fbs) {
+                            dataController.addDisplay(fb);
+                        }
+                	}
+            	} catch (Exception e){
+            		System.out.println("Facebook loading error");
+            	}
                 break;
         }
     }
