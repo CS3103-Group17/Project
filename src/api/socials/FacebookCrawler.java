@@ -32,7 +32,7 @@ public class FacebookCrawler {
 					  Connection<Post> pageFeed = facebookClient.fetchConnection(page.getId() + "/feed", Post.class, Parameter.with("fields", "message,permalink_url,picture,full_picture"), Parameter.with("limit", 2));
 					  for (List<Post> feed: pageFeed) {
 						  for (Post post: feed) {
-							  FbData temp = new FbData(idx, page.getName(), post.getMessage(), post.getPermalinkUrl(), post.getPicture());
+							  FbData temp = new FbData(idx, page.getName(), post.getMessage(), post.getPermalinkUrl(), post.getFullPicture());
 //							  System.out.println(post.getMessage());
 //							  System.out.println(post.getPicture());
 //							  System.out.println(post.getPermalinkUrl());
