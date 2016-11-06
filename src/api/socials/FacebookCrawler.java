@@ -37,8 +37,8 @@ public class FacebookCrawler {
 //							  System.out.println(post.getPicture());
 //							  System.out.println(post.getPermalinkUrl());
 							  list.add(temp);
+							  if (idx == 15) return list;
 							  idx++;
-							  if (idx == 20) return list;
 						  }
 					  }
 //					  System.out.println();
