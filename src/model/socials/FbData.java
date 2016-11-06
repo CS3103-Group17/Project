@@ -6,34 +6,26 @@ public class FbData {
 	private String userHandle;
 	private String text;
 	private String sourceURL;
-	private String textURL;
 	private String imageURL;
-
+	
 	/**
 	 * 
 	 * @param iD
 	 * @param userHandle
-	 * @param text
+	 * @param caption
 	 * @param sourceURL
+	 * @param imageURL
 	 */
-	public FbData(int iD, String userHandle, String text, String sourceURL) {
+	
+	public FbData(int iD, String userHandle, String caption, String sourceURL, String imageURL) {
 		ID = iD;
 		this.userHandle = userHandle;
 		this.text = text;
 		this.sourceURL = sourceURL;
-		this.textURL = null;
-		this.imageURL = null;
+		this.imageURL = imageURL;
 	}
-	
-	public void addTextURL(String url){
-		this.textURL = url;
-	}
-	
-	public void addImageURL(String url){
-		this.imageURL = url;
-	}
-	
-	public int getID(){
+
+	public int getID() {
 		return ID;
 	}
 
@@ -49,17 +41,12 @@ public class FbData {
 		return sourceURL;
 	}
 
-	public String getTextURL() {
-		return textURL;
-	}
-
 	public String getImageURL() {
 		return imageURL;
 	}
-
+	
 	public String toString(){
-		return "#"+ID+" "+"@"+userHandle+" "+text+"\n"+textURL+" "+imageURL+"\n";
-		
+		return "#"+ID+" @"+userHandle+" "+text+" "+sourceURL+" "+imageURL+"\n";
 	}
 
 }
