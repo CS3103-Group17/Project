@@ -17,7 +17,7 @@ public class FbData {
 	 * @param imageURL
 	 */
 	
-	public FbData(int iD, String userHandle, String caption, String sourceURL, String imageURL) {
+	public FbData(int iD, String userHandle, String text, String sourceURL, String imageURL) {
 		ID = iD;
 		this.userHandle = userHandle;
 		this.text = text;
