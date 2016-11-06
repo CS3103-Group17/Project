@@ -38,8 +38,8 @@ public class FacebookCrawler {
 //							  System.out.println(post.getPermalinkUrl());
 							  list.add(temp);
 							  if (idx == 15) return list;
-							  if (i == 2) break;
 							  idx++;
+							  if (i == 2) break;
 							  i++;
 						  }
 						  if (i == 2) break;
