@@ -14,8 +14,7 @@ import com.restfb.Version;
 import model.socials.FbData;
 
 public class FacebookCrawler {
-	
-	private final String ACCESS_TOKEN = "EAACEdEose0cBAKPQUBcDJL8FlF1GCTrQ17bthU8BcNZCrpjAyegkXli0EXuYsHLwPZC6ZCbWET9XEkZA2l0ZB6CURpVlBN2X8PYdupuSdovNDsZApusn4X0BH39mILZBZBPBtt5OIJohGAieEEx8X3bLRA7f0htHLPEyweoS9u3mkAZDZD";
+	private final String ACCESS_TOKEN = "EAAKQUjNuE8ABAIZAPKMD5QS9iA3jFN0SZAzZBiFb6FkcAJUzFSkRSn6U4uN0x3iIZCK0RjwZAvp2m8P4hjDbOozjJjNYHz246SSXwSZCHl2CVhKP7sfYH6wEBxazIZCLoLp67ERHZBc8v3LbY52PwZAT0HV3mR8G7JX8ZD";
     private DefaultFacebookClient facebookClient = new DefaultFacebookClient(ACCESS_TOKEN, Version.LATEST);
 	
 	public ArrayList<FbData> getFbPosts(String searchTerm) {
@@ -28,7 +27,7 @@ public class FacebookCrawler {
 			int idx = 1;
 			for (List<Page> feedConnectionPage : publicSearch) {
 				  for (Page page : feedConnectionPage) {
-//					  System.out.println("@" + page.getName());
+					  System.out.println("Fb Page: " + page.getName());
 					  Connection<Post> pageFeed = facebookClient.fetchConnection(page.getId() + "/feed", Post.class, Parameter.with("fields", "message,permalink_url,picture,full_picture"), Parameter.with("limit", 2));
 					  for (List<Post> feed: pageFeed) {
 						  int i = 1;
