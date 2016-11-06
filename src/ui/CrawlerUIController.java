@@ -211,40 +211,49 @@ public class CrawlerUIController {
     }
     
     public void setFlightItem(Itinerary itinerary) {
-    	Carrier carrier = itinerary.getOutboundLeg().getCarriers().get(0);
-    	Flight outgoingFlight = itinerary.getOutboundLeg().getFlights().get(0);
-    	Flight inboundFlight = itinerary.getInboundLeg().getFlights().get(0);
-    	Double price = Double.parseDouble(itinerary.getPrice());
-    	DecimalFormat fmt = new DecimalFormat("0.00");
-    	DateTimeFormatter dtFmt = DateTimeFormatter.ofPattern("HH:mm");
-    	//System.out.println("Logo"+carrier.getImageURL());
+    	
+    	try{
+    		Carrier carrier = itinerary.getOutboundLeg().getCarriers().get(0);
+        	Flight outgoingFlight = itinerary.getOutboundLeg().getFlights().get(0);
+        	Flight inboundFlight = itinerary.getInboundLeg().getFlights().get(0);
+        	Double price = Double.parseDouble(itinerary.getPrice());
+        	DecimalFormat fmt = new DecimalFormat("0.00");
+        	DateTimeFormatter dtFmt = DateTimeFormatter.ofPattern("HH:mm");
+        	//System.out.println("Logo"+carrier.getImageURL());
+        	
+        	String newHtml = "";
 
-    	if (carrier != null && outgoingFlight != null && inboundFlight != null) {
-            if(flightCounter % 3 == 0) {
-                flightHtml += "<div id=\"pricing-table\" class=\"clear\">\r\n";
-            }    	    
+        	if (carrier != null && outgoingFlight != null && inboundFlight != null) {
+                if(flightCounter % 3 == 0) {
+                	newHtml += "<div id=\"pricing-table\" class=\"clear\">\r\n";
+                }    	    
 
-        	flightHtml += "\t<div class=\"plan\">\r\n        ";
-        	flightHtml += "<h3>" + carrier.getName();
-        	flightHtml += "<span>S$" + fmt.format(price) + "</span>";
-        	flightHtml += "</h3>\r\n        ";
-        	flightHtml += "<img style=\"margin: 3px 3px;\" src=\"" + carrier.getImageURL() + "\" width=\"140\" />       \r\n        ";
-        	flightHtml += "<ul>\r\n            ";
-        	flightHtml += "<li><b>Flight Number</b></br> " + outgoingFlight.getCarrier().getDisplayCode() + outgoingFlight.getFlightNo() + "</br>" + inboundFlight.getCarrier().getDisplayCode() + inboundFlight.getFlightNo() + "</li>\r\n            ";
-        	flightHtml += "<li><b>Duration</b></br> " + itinerary.getOutboundLeg().getDuration() + " minutes<br/>" + itinerary.getInboundLeg().getDuration() + " minutes</li>\t\t\r\n        ";
-        	if(itinerary.getOutboundLeg().getDepartureTime() != null && itinerary.getOutboundLeg().getArrivalTime() != null)
-        		flightHtml += "<li><b>Time</b></br> " + itinerary.getOutboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getOutboundLeg().getArrivalTime().format(dtFmt);
-        	if(itinerary.getInboundLeg().getDepartureTime() != null && itinerary.getInboundLeg().getArrivalTime() != null)
-        		flightHtml += "<br/>" + itinerary.getInboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getInboundLeg().getArrivalTime().format(dtFmt) + "</li>\t\t\r\n        ";
-        	flightHtml += "</ul> \r\n    ";
-        	flightHtml += "</div>\r\n";
-            
-            if(flightCounter % 3 == 2) {
-            	flightHtml += "</div>\r\n";
-            }
-            
-            flightCounter = (flightCounter + 1) % 3;
+                newHtml += "\t<div class=\"plan\">\r\n        ";
+                newHtml += "<h3>" + carrier.getName();
+                newHtml += "<span>S$" + fmt.format(price) + "</span>";
+                newHtml += "</h3>\r\n        ";
+                newHtml += "<img style=\"margin: 3px 3px;\" src=\"" + carrier.getImageURL() + "\" width=\"140\" />       \r\n        ";
+                newHtml += "<ul>\r\n            ";
+                newHtml += "<li><b>Flight Number</b></br> " + outgoingFlight.getCarrier().getDisplayCode() + outgoingFlight.getFlightNo() + "</br>" + inboundFlight.getCarrier().getDisplayCode() + inboundFlight.getFlightNo() + "</li>\r\n            ";
+                newHtml += "<li><b>Duration</b></br> " + itinerary.getOutboundLeg().getDuration() + " minutes<br/>" + itinerary.getInboundLeg().getDuration() + " minutes</li>\t\t\r\n        ";
+            	if(itinerary.getOutboundLeg().getDepartureTime() != null && itinerary.getOutboundLeg().getArrivalTime() != null)
+            		newHtml += "<li><b>Time</b></br> " + itinerary.getOutboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getOutboundLeg().getArrivalTime().format(dtFmt);
+            	if(itinerary.getInboundLeg().getDepartureTime() != null && itinerary.getInboundLeg().getArrivalTime() != null)
+            		newHtml += "<br/>" + itinerary.getInboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getInboundLeg().getArrivalTime().format(dtFmt) + "</li>\t\t\r\n        ";
+            	newHtml += "</ul> \r\n    ";
+            	newHtml += "</div>\r\n";
+                
+                if(flightCounter % 3 == 2) {
+                	newHtml += "</div>\r\n";
+                }
+                
+                flightHtml += newHtml;
+                flightCounter = (flightCounter + 1) % 3;
+        	}
+    	} catch (Exception e){
+    		e.printStackTrace();
     	}
+    	
     }
     
     public void setSocialItem(FbData facebook) {

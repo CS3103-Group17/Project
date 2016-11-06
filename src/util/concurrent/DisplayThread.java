@@ -52,7 +52,7 @@ public class DisplayThread implements Runnable {
                     return;
                 }
                 
-            } catch (InterruptedException ex) {
+            } catch (Exception ex) {
                 ex.printStackTrace();
                 
                 uiController.enableSearch();

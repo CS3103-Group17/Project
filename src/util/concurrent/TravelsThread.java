@@ -81,8 +81,15 @@ public class TravelsThread implements Runnable {
                         /* City have not been crawled before. */
                         if (city == null) {
                             city = wikitravelCrawler.parsePage(page);
-                            city.setGoogleTrendsHTML(GoogleSearch.getTrend(name));
-                            city.addImages(GoogleSearch.getImages(name));
+                            
+                            
+                            try{
+                            	city.setGoogleTrendsHTML(GoogleSearch.getTrend(name));
+                            	city.addImages(GoogleSearch.getImages(name));
+                            } catch (Exception e){
+                            	e.printStackTrace();
+                            }
+                            
                             
                             dataController.storeCity(city);
                         }
