@@ -45,7 +45,6 @@ public class FacebookCrawler {
 						  }
 						  if (i == 2) break;
 					  }
-					  System.out.println();
 				  }
 			}
 			
