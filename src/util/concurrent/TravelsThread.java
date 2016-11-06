@@ -70,9 +70,11 @@ public class TravelsThread implements Runnable {
                 /* If not, crawl the web. */
                 } else {
                     ArrayList<Page> pages = wikitravelCrawler.getSearch(searchField.getName());
+                    //System.out.println(searchField.getName());
                     
                     for (Page page : pages) {
                         String name = page.getPageTitle();
+                        System.out.println(name);
                         
                         City city = dataController.getCity(name);
                         

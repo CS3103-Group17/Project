@@ -9,6 +9,7 @@ import model.SearchField;
 import model.SearchHistory;
 import util.Constants.Action;
 import util.Constants.Category;
+import util.Constants.Flights;
 import util.Constants.Hotels;
 import util.Constants.Socials;
 import util.Constants.Travels;
@@ -34,30 +35,6 @@ public class CategoryThreadController {
     private CategoryThreadController() {
         threadPool = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(QUEUE_SIZE));
         threadPool.allowCoreThreadTimeOut(true);
-        
-        /* Thread to keep track if all the threads have completed their tasks. */
-        tracker = new Thread() {
-            @Override
-            public void run() {
-                DataController dataController = DataController.INSTANCE;
-                
-                while (threadPool.getTaskCount() != threadPool.getCompletedTaskCount()) {
-                    try {
-                        Thread.sleep(500);
-                        
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-                
-                /* If is a new search term. */
-                if (dataController.getSearchHistory(getCurrentSearchField()) == null) {
-                    dataController.storeSearchHistory(currentSearchHistory);
-                }
-                
-                dataController.setDisplayQueueFinished(true);
-            }
-        };        
     }
     
     /* Default execute action is SEARCH. */
@@ -87,6 +64,10 @@ public class CategoryThreadController {
                     threadPool.execute(new SocialsThread(socials, action));
                 }
                 
+                for (Flights flights : Flights.values()) {
+                    threadPool.execute(new FlightsThread(flights, action, searchField));
+                }
+                
                 break;
                 
             case HOTELS:
@@ -96,6 +77,30 @@ public class CategoryThreadController {
                 break;
         }
 
+        /* Thread to keep track if all the threads have completed their tasks. */
+        tracker = new Thread() {
+            @Override
+            public void run() {
+                DataController dataController = DataController.INSTANCE;
+                
+                while (threadPool.getTaskCount() != threadPool.getCompletedTaskCount()) {
+                    try {
+                        Thread.sleep(500);
+                        
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                
+                /* If is a new search term. */
+                if (dataController.getSearchHistory(getCurrentSearchField()) == null) {
+                    dataController.storeSearchHistory(currentSearchHistory);
+                }
+                
+                dataController.setDisplayQueueFinished(true);
+            }
+        };
+        
         tracker.start();
     }
     

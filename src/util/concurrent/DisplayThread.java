@@ -4,6 +4,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 import main.DataController;
+import model.flights.Itineraries;
+import model.flights.Itinerary;
 import model.hotels.Hotel;
 import model.socials.InstagramData;
 import model.socials.Tweet;
@@ -34,7 +36,10 @@ public class DisplayThread implements Runnable {
                         uiController.setHotelItem((Hotel) object);
                     } else if (object instanceof InstagramData) {
                         uiController.setSocialItem((InstagramData) object);
-                    } else if (object instanceof Tweet) {
+                    } else if (object instanceof Itinerary) {
+                        uiController.setFlightItem((Itinerary) object);
+                    }
+                    else if (object instanceof Tweet) {
                         uiController.setSocialItem((Tweet) object);
                     }
                 }

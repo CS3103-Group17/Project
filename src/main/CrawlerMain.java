@@ -1,6 +1,7 @@
 package main;
 
 import java.io.IOException;
+import java.net.URL;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +12,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import storage.PersistentStorage;
+import ui.CrawlerUIController;
 
 public class CrawlerMain extends Application {
-    private static final String APPLICATION_FXML_FILEPATH = "../ui/CrawlerUI.fxml";
+    private static final String APPLICATION_FXML_FILEPATH = "CrawlerUI.fxml";
     private static final String APPLICATION_NAME = "Travel Crawler";
     
 	public static void main(String[] args) {
@@ -38,7 +40,7 @@ public class CrawlerMain extends Application {
 	private void initUserInterface(Stage primaryStage) {
 	    FXMLLoader loader = new FXMLLoader();
 	    
-	    loader.setLocation(getClass().getResource(APPLICATION_FXML_FILEPATH));
+	    loader.setLocation(getProgramResource(CrawlerUIController.class, APPLICATION_FXML_FILEPATH));
 	    setScene(primaryStage, loader);
 	    
 	    primaryStage.show();
@@ -58,4 +60,8 @@ public class CrawlerMain extends Application {
             ex.printStackTrace();
         }
     }
+    
+    private static URL getProgramResource(Class<?> classFile, String resourceLocation) {
+        return classFile.getResource(resourceLocation);
+    }       
 }

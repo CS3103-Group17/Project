@@ -33,7 +33,7 @@ public class InstagramCrawler {
 		
 		TagMediaFeed mediaFeed = null;
 		try {
-			mediaFeed = instagram.getRecentMediaTags(searchTerm);
+			mediaFeed = instagram.getRecentMediaTags(searchTerm.replace(" ", ""));
 		} catch (InstagramException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class InstagramCrawler {
 			idx++;
 		}
 		
-		System.out.println(list);
+		//System.out.println(list);
 		
 		return list;
 	}

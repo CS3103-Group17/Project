@@ -3,6 +3,8 @@ package api.travels;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.text.WordUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +21,7 @@ public class WikitravelCrawler {
 	
 	public City parsePage(Page page){
 		City city = new City(page.getPageTitle());
-		String pageTitle = page.getPageTitle().replace(" ", "%20");
+		String pageTitle = page.getPageTitle();
 		getCitySummary(pageTitle, city);
 		ArrayList<Section> sections = getSections(pageTitle);
 		for(Section s : sections){
@@ -34,9 +36,11 @@ public class WikitravelCrawler {
 	
 	public ArrayList<Page> getSearch(String keyword){
 		ArrayList<Page> pages = new ArrayList<Page>();
+		keyword = WordUtils.capitalizeFully(keyword);
 		keyword = ContentParser.encodeIntoURL(keyword);
 		
 		String url = "http://wikitravel.org/wiki/en/api.php?action=opensearch&search="+keyword+"&limit=100&namespace=0&format=xml";
+		
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
@@ -96,7 +100,7 @@ public class WikitravelCrawler {
 		pageTitle = ContentParser.encodeIntoURL(pageTitle);
 		
 		String url = "http://wikitravel.org/wiki/en/api.php?format=xml&action=parse&page="+pageTitle+"&section="+section.getIndex();
-		
+		//System.out.println(url);
 		Document doc;
 		try {
 			doc = Jsoup.connect(url)
@@ -128,7 +132,7 @@ public class WikitravelCrawler {
 					city.addImage(id);
 			}*/
 			
-			System.out.println(section.getContent());
+			//System.out.println(section.getContent());
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,7 +161,7 @@ public class WikitravelCrawler {
 			while(sections.hasNext()){
 				Element sectionCon = sections.next();
 				sectionContent = ContentParser.parseSummaryContent(sectionCon.html());
-				System.out.println(sectionContent);
+				//System.out.println(sectionContent);
 			}
 			
 			/*Iterator<Element> images = doc.select("img").iterator();
@@ -180,7 +184,7 @@ public class WikitravelCrawler {
 	
 	private ImageData getImageData(String imageName){
 		
-		String parsedImageName = imageName.replace(" ", "%20");
+		String parsedImageName = ContentParser.encodeIntoURL(imageName);
 		
 		if(!imageName.contains("File:"))
 			parsedImageName="File:"+parsedImageName;

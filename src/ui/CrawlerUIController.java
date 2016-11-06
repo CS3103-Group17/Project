@@ -2,8 +2,18 @@ package ui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialog.DialogTransition;
+import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXSpinner;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,9 +36,13 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 
+import main.DataController;
 import model.ImageData;
 import model.SearchField;
 import model.Section;
+import model.flights.Carrier;
+import model.flights.Flight;
+import model.flights.Itinerary;
 import model.hotels.Hotel;
 import model.socials.InstagramData;
 import model.socials.Tweet;
@@ -45,40 +59,50 @@ public class CrawlerUIController {
     private StackPane travelLocationStackPane;
     @FXML
     private StackPane displayInformationStackPane;	
+    @FXML
+    private StackPane errorPane;	
 	
     @FXML
-    private Button searchButton;    
+    private JFXButton searchButton;    
     @FXML
-    private DatePicker arrivalDatePicker;
+    private JFXDatePicker arrivalDatePicker;
     @FXML
-    private DatePicker departureDatePicker;    
+    private JFXDatePicker departureDatePicker;    
 	@FXML
 	private Label searchLabel;
 	@FXML
-	private TextField nameTextField;
+	private JFXTextField nameTextField;
 	@FXML
-	private TextField pointOfInterestTextField;
+	private JFXTextField pointOfInterestTextField;
 	@FXML
 	private TreeView<String> travelLocationTreeView;
+	
+	@FXML
+	private JFXSpinner loadingSpinner;
 	
 	/* Dynamic views. */
 	private TilePane displayTilePane;
 	private WebView displayWebView;
+	private JFXDialog dg;
 	
 	private TreeItem<String> citiesItem;
 	private TreeItem<String> hotelsItem;
+	private TreeItem<String> flightsItem;
 	private TreeItem<String> socialsItem;
     
 	private ArrayList<City> displayCities;
+	private Label errorLbl;
 	
 	private int hotelCounter;
 	private String hotelHtml;
-	
-	private int socialCounter;
+
+	private int flightCounter;
+	private String flightHtml;
 	private String socialHtml;
 	
 	private CategoryThreadController threadController = CategoryThreadController.INSTANCE;
-
+	private DataController dataController = DataController.INSTANCE;
+	
 	@FXML
 	public void initialize() {
 	    displayTilePane = new TilePane();
@@ -89,12 +113,30 @@ public class CrawlerUIController {
 	    
 	    displayCities = new ArrayList<City>();
 	    hotelCounter = 0;
+	    flightCounter = 0;
 	    hotelHtml = "";
+	    flightHtml = "";
 	    socialHtml = "";
 	    
+	    setUpDialogError();
 	    setTravelLocation();
         setArrivalDate();
         setDepartureDate();
+	}
+	
+	private void setUpDialogError(){
+		JFXDialogLayout dl = new JFXDialogLayout();
+		errorLbl = new Label("");
+		JFXButton closeBtn = new JFXButton("Close");
+		String css = this.getClass().getResource("style.css").toExternalForm();
+		closeBtn.getStylesheets().add(css);
+		closeBtn.getStyleClass().add("button-raised");
+		closeBtn.setOnMouseClicked(event -> {
+			dg.close();
+		});
+		dl.setHeading(errorLbl);
+		dl.setBody(closeBtn);
+		dg = new JFXDialog(errorPane, dl, DialogTransition.CENTER, true);
 	}
 
 	@FXML
@@ -110,6 +152,7 @@ public class CrawlerUIController {
 	}
 	
 	public void enableSearch() {
+		loadingSpinner.setVisible(false);
         searchButton.setDisable(false);
         arrivalDatePicker.setDisable(false);
         departureDatePicker.setDisable(false);
@@ -118,6 +161,7 @@ public class CrawlerUIController {
 	}
 	
 	public void disableSearch() {
+		loadingSpinner.setVisible(true);
 	    searchButton.setDisable(true);
 	    arrivalDatePicker.setDisable(true);
 	    departureDatePicker.setDisable(true);
@@ -165,6 +209,43 @@ public class CrawlerUIController {
         hotelCounter = (hotelCounter + 1) % 3;
     }
     
+    public void setFlightItem(Itinerary itinerary) {
+    	Carrier carrier = itinerary.getOutboundLeg().getCarriers().get(0);
+    	Flight outgoingFlight = itinerary.getOutboundLeg().getFlights().get(0);
+    	Flight inboundFlight = itinerary.getInboundLeg().getFlights().get(0);
+    	Double price = Double.parseDouble(itinerary.getPrice());
+    	DecimalFormat fmt = new DecimalFormat("0.00");
+    	DateTimeFormatter dtFmt = DateTimeFormatter.ofPattern("HH:mm");
+    	//System.out.println("Logo"+carrier.getImageURL());
+
+    	if (carrier != null && outgoingFlight != null && inboundFlight != null) {
+            if(flightCounter % 3 == 0) {
+                flightHtml += "<div id=\"pricing-table\" class=\"clear\">\r\n";
+            }    	    
+
+        	flightHtml += "\t<div class=\"plan\">\r\n        ";
+        	flightHtml += "<h3>" + carrier.getName();
+        	flightHtml += "<span>S$" + fmt.format(price) + "</span>";
+        	flightHtml += "</h3>\r\n        ";
+        	flightHtml += "<img style=\"margin: 3px 3px;\" src=\"" + carrier.getImageURL() + "\" width=\"140\" />       \r\n        ";
+        	flightHtml += "<ul>\r\n            ";
+        	flightHtml += "<li><b>Flight Number</b></br> " + outgoingFlight.getCarrier().getDisplayCode() + outgoingFlight.getFlightNo() + "</br>" + inboundFlight.getCarrier().getDisplayCode() + inboundFlight.getFlightNo() + "</li>\r\n            ";
+        	flightHtml += "<li><b>Duration</b></br> " + itinerary.getOutboundLeg().getDuration() + " minutes<br/>" + itinerary.getInboundLeg().getDuration() + " minutes</li>\t\t\r\n        ";
+        	if(itinerary.getOutboundLeg().getDepartureTime() != null && itinerary.getOutboundLeg().getArrivalTime() != null)
+        		flightHtml += "<li><b>Time</b></br> " + itinerary.getOutboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getOutboundLeg().getArrivalTime().format(dtFmt);
+        	if(itinerary.getInboundLeg().getDepartureTime() != null && itinerary.getInboundLeg().getArrivalTime() != null)
+        		flightHtml += "<br/>" + itinerary.getInboundLeg().getDepartureTime().format(dtFmt) + " to " + itinerary.getInboundLeg().getArrivalTime().format(dtFmt) + "</li>\t\t\r\n        ";
+        	flightHtml += "</ul> \r\n    ";
+        	flightHtml += "</div>\r\n";
+            
+            if(flightCounter % 3 == 2) {
+            	flightHtml += "</div>\r\n";
+            }
+            
+            flightCounter = (flightCounter + 1) % 3;
+    	}
+    }
+    
     public void setSocialItem(InstagramData instagram) {
     	socialHtml += "<blockquote class=\"twitter-tweet\">\r\n";
     	socialHtml += "\t<div>\r\n        ";
@@ -209,6 +290,12 @@ public class CrawlerUIController {
 
             socialHtml = "";
             
+            for (TreeItem<String> treeItem : travelLocationTreeView.getRoot().getChildren()) {
+                if (treeItem.getValue().equals("Information")) {
+                    treeItem.getChildren().clear();
+                }
+            }
+            
             travelLocationTreeView.getRoot().setExpanded(true);
             
             disableSearch();
@@ -223,10 +310,12 @@ public class CrawlerUIController {
 
         citiesItem = new TreeItem<String>("Information");
         hotelsItem = new TreeItem<String>("Hotels");
+        flightsItem = new TreeItem<String>("Flights");
         socialsItem = new TreeItem<String>("Socials");
         
         rootItem.getChildren().add(citiesItem);
         rootItem.getChildren().add(hotelsItem);
+        rootItem.getChildren().add(flightsItem);
         rootItem.getChildren().add(socialsItem);
 
         travelLocationTreeView.setRoot(rootItem);
@@ -249,7 +338,6 @@ public class CrawlerUIController {
                     if (treeCellItem.getParent() == null) {
                         return;
                     }
-                    
                     
                     TreeItem<String> parent = treeCellItem.getParent();
                     
@@ -275,6 +363,10 @@ public class CrawlerUIController {
                             setHotelItemDisplay();
                             break;
                             
+                        case "Flights":
+                            setFlightItemDisplay();
+                            break;
+                            
                         case "Socials":
                             setSocialItemDisplay();
                             break;
@@ -287,14 +379,11 @@ public class CrawlerUIController {
 	}
 	
 	private void setCityItemDisplay(TreeItem<String> cityItem) {
-	    if (cityItem.getValue().equals("Information")) {
-	        return;
-	    }
-	    
 	    String css = "<link rel=\"stylesheet\" href=\"http://wikitravel.org/mw/skins/common/commonContent.css\" />";
 	    
 	    City city = null;
 	    String cityName = (cityItem.isLeaf()) ? cityItem.getParent().getValue() : cityItem.getValue();
+	    
 	    
 	    for (City displayCity : displayCities) {
 	        if (displayCity.getName().equals(cityName)) {
@@ -303,7 +392,18 @@ public class CrawlerUIController {
 	        }
 	    }
 	    
+	    if (cityItem.getValue().equals("Information")) {
+	    	if (displayCities.isEmpty()){
+	    		errorLbl.setText("Please set a Destination");
+				dg.show();
+	    	}
+	    	
+	        return;
+	    }
+	    
 	    if (city == null) {
+	    	errorLbl.setText("Please set a Valid Destination");
+			dg.show();
 	        return;
 	    }
 	    
@@ -338,7 +438,28 @@ public class CrawlerUIController {
 	private void setHotelItemDisplay() {
         String html = "<html>\r\n<head>\r\n\t<style type=\"text/css\">\r\n\tbody{\r\n  background: #fff;\r\n}\r\n\r\n#pricing-table {\r\n\tmargin: 10px auto;\r\n\ttext-align: center;\r\n\twidth: 670px; /* total computed width = 222 x 3 + 226 */\r\n\tborder: 1px solid #ddd;\r\n}\r\n\r\n#pricing-table .plan {\r\n\tfont: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;\r\n\ttext-shadow: 0 1px rgba(255,255,255,.8);        \r\n\tbackground: #fff;      \r\n\tborder: 1px solid #ddd;\r\n\tcolor: #333;\r\n\tpadding: 20px;\r\n\twidth: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      \r\n\tfloat: left;\r\n\tposition: relative;\r\n}\r\n\r\n#pricing-table #most-popular {\r\n\tz-index: 2;\r\n\ttop: -13px;\r\n\tborder-width: 3px;\r\n\tpadding: 20px 20px;\r\n\t-moz-border-radius: 5px;\r\n\t-webkit-border-radius: 5px;\r\n\tborder-radius: 5px;\r\n\t-moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\t-webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\tbox-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    \r\n}\r\n\r\n#pricing-table .plan:nth-child(1) {\r\n\t-moz-border-radius: 5px 0 0 5px;\r\n\t-webkit-border-radius: 5px 0 0 5px;\r\n\tborder-radius: 5px 0 0 5px;        \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) {\r\n\t-moz-border-radius: 0 5px 5px 0;\r\n\t-webkit-border-radius: 0 5px 5px 0;\r\n\tborder-radius: 0 5px 5px 0;        \r\n}\r\n\r\n/* --------------- */\t\r\n\r\n#pricing-table h3 {\r\n\tfont-size: 20px;\r\n\tfont-weight: normal;\r\n\tpadding: 15px;\r\n\tmargin: -20px -20px 50px -20px;\r\n\tbackground-color: #eee;\r\n\tbackground-image: -moz-linear-gradient(#fff,#eee);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    \r\n\tbackground-image: -webkit-linear-gradient(#fff, #eee);\r\n\tbackground-image: -o-linear-gradient(#fff, #eee);\r\n\tbackground-image: -ms-linear-gradient(#fff, #eee);\r\n\tbackground-image: linear-gradient(#fff, #eee);\r\n}\r\n\r\n#pricing-table #most-popular h3 {\r\n\tbackground-color: #ddd;\r\n\tbackground-image: -moz-linear-gradient(#eee,#ddd);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));    \r\n\tbackground-image: -webkit-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -o-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -ms-linear-gradient(#eee, #ddd);\r\n\tbackground-image: linear-gradient(#eee, #ddd);\r\n\tmargin-top: -30px;\r\n\tpadding-top: 30px;\r\n\t-moz-border-radius: 5px 5px 0 0;\r\n\t-webkit-border-radius: 5px 5px 0 0;\r\n\tborder-radius: 5px 5px 0 0; \t\t\r\n}\r\n\r\n#pricing-table .plan:nth-child(1) h3 {\r\n\t-moz-border-radius: 5px 0 0 0;\r\n\t-webkit-border-radius: 5px 0 0 0;\r\n\tborder-radius: 5px 0 0 0;       \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) h3 {\r\n\t-moz-border-radius: 0 5px 0 0;\r\n\t-webkit-border-radius: 0 5px 0 0;\r\n\tborder-radius: 0 5px 0 0;       \r\n}\t\r\n\r\n#pricing-table h3 span {\r\n\tdisplay: block;\r\n\tfont: bold 25px/100px Georgia, Serif;\r\n\tcolor: #777;\r\n\tbackground: #fff;\r\n\tborder: 5px solid #fff;\r\n\theight: 120px;\r\n\twidth: 120px;\r\n\tmargin: 5px auto -65px;\r\n\t-moz-border-radius: 100px;\r\n\t-webkit-border-radius: 100px;\r\n\tborder-radius: 100px;\r\n\t-moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\t-webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\tbox-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n}\r\n\r\n/* --------------- */\r\n\r\n#pricing-table ul {\r\n\tmargin: 20px 0 0 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n}\r\n\r\n#pricing-table li {\r\n\tborder-top: 1px solid #ddd;\r\n\tpadding: 10px 0;\r\n}\r\n\r\n/* --------------- */\r\n\t\r\n#pricing-table .signup {\r\n\tposition: relative;\r\n\tpadding: 8px 20px;\r\n\tmargin: 20px 0 0 0;  \r\n\tcolor: #fff;\r\n\tfont: bold 14px Arial, Helvetica;\r\n\ttext-transform: uppercase;\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;       \r\n\tbackground-color: #72ce3f;\r\n\tbackground-image: -moz-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#72ce3f), to(#62bc30));    \r\n\tbackground-image: -webkit-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -o-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -ms-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: linear-gradient(#72ce3f, #62bc30);\r\n\t-moz-border-radius: 3px;\r\n\t-webkit-border-radius: 3px;\r\n\tborder-radius: 3px;     \r\n\ttext-shadow: 0 1px 0 rgba(0,0,0,.3);        \r\n\t-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\t-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\tbox-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n}\r\n\r\n#pricing-table .signup:hover {\r\n\tbackground-color: #62bc30;\r\n\tbackground-image: -moz-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#62bc30), to(#72ce3f));      \r\n\tbackground-image: -webkit-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -o-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -ms-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: linear-gradient(#62bc30, #72ce3f); \r\n}\r\n\r\n#pricing-table .signup:active, #pricing-table .signup:focus {\r\n\tbackground: #62bc30;       \r\n\ttop: 2px;\r\n\t-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\t-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\tbox-shadow: 0 0 3px rgba(0, 0, 0, .7) inset; \r\n}\r\n\r\n/* --------------- */\r\n\r\n.clear:before, .clear:after {\r\n  content:\"\";\r\n  display:table\r\n}\r\n\r\n.clear:after {\r\n  clear:both\r\n}\r\n\r\n.clear {\r\n  zoom:1\r\n}\r\n\t</style>\r\n</head>\r\n<body>\r\n";
         
+        if(hotelHtml.equals("")){
+			errorLbl.setText("Please set a Destination");
+			dg.show();
+			return;
+		}
+        
         html += hotelHtml;
+        html += "</body>\r\n</html>";
+        
+        loadWebView(html);
+	}
+	
+	private void setFlightItemDisplay() {
+		String html = "<html>\r\n<head>\r\n\t<style type=\"text/css\">\r\n\tbody{\r\n  background: #fff;\r\n}\r\n\r\n#pricing-table {\r\n\tmargin: 10px auto;\r\n\ttext-align: center;\r\n\twidth: 670px; /* total computed width = 222 x 3 + 226 */\r\n\tborder: 1px solid #ddd;\r\n}\r\n\r\n#pricing-table .plan {\r\n\tfont: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;\r\n\ttext-shadow: 0 1px rgba(255,255,255,.8);        \r\n\tbackground: #fff;      \r\n\tborder: 1px solid #ddd;\r\n\tcolor: #333;\r\n\tpadding: 20px;\r\n\twidth: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      \r\n\tfloat: left;\r\n\tposition: relative;\r\n}\r\n\r\n#pricing-table #most-popular {\r\n\tz-index: 2;\r\n\ttop: -13px;\r\n\tborder-width: 3px;\r\n\tpadding: 20px 20px;\r\n\t-moz-border-radius: 5px;\r\n\t-webkit-border-radius: 5px;\r\n\tborder-radius: 5px;\r\n\t-moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\t-webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);\r\n\tbox-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    \r\n}\r\n\r\n#pricing-table .plan:nth-child(1) {\r\n\t-moz-border-radius: 5px 0 0 5px;\r\n\t-webkit-border-radius: 5px 0 0 5px;\r\n\tborder-radius: 5px 0 0 5px;        \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) {\r\n\t-moz-border-radius: 0 5px 5px 0;\r\n\t-webkit-border-radius: 0 5px 5px 0;\r\n\tborder-radius: 0 5px 5px 0;        \r\n}\r\n\r\n/* --------------- */\t\r\n\r\n#pricing-table h3 {\r\n\tfont-size: 20px;\r\n\tfont-weight: normal;\r\n\tpadding: 15px;\r\n\tmargin: -20px -20px 50px -20px;\r\n\tbackground-color: #eee;\r\n\tbackground-image: -moz-linear-gradient(#fff,#eee);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    \r\n\tbackground-image: -webkit-linear-gradient(#fff, #eee);\r\n\tbackground-image: -o-linear-gradient(#fff, #eee);\r\n\tbackground-image: -ms-linear-gradient(#fff, #eee);\r\n\tbackground-image: linear-gradient(#fff, #eee);\r\n}\r\n\r\n#pricing-table #most-popular h3 {\r\n\tbackground-color: #ddd;\r\n\tbackground-image: -moz-linear-gradient(#eee,#ddd);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));    \r\n\tbackground-image: -webkit-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -o-linear-gradient(#eee, #ddd);\r\n\tbackground-image: -ms-linear-gradient(#eee, #ddd);\r\n\tbackground-image: linear-gradient(#eee, #ddd);\r\n\tmargin-top: -30px;\r\n\tpadding-top: 30px;\r\n\t-moz-border-radius: 5px 5px 0 0;\r\n\t-webkit-border-radius: 5px 5px 0 0;\r\n\tborder-radius: 5px 5px 0 0; \t\t\r\n}\r\n\r\n#pricing-table .plan:nth-child(1) h3 {\r\n\t-moz-border-radius: 5px 0 0 0;\r\n\t-webkit-border-radius: 5px 0 0 0;\r\n\tborder-radius: 5px 0 0 0;       \r\n}\r\n\r\n#pricing-table .plan:nth-child(4) h3 {\r\n\t-moz-border-radius: 0 5px 0 0;\r\n\t-webkit-border-radius: 0 5px 0 0;\r\n\tborder-radius: 0 5px 0 0;       \r\n}\t\r\n\r\n#pricing-table h3 span {\r\n\tdisplay: block;\r\n\tfont: bold 25px/100px Georgia, Serif;\r\n\tcolor: #777;\r\n\tbackground: #fff;\r\n\tborder: 5px solid #fff;\r\n\theight: 120px;\r\n\twidth: 120px;\r\n\tmargin: 5px auto -65px;\r\n\t-moz-border-radius: 100px;\r\n\t-webkit-border-radius: 100px;\r\n\tborder-radius: 100px;\r\n\t-moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\t-webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n\tbox-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;\r\n}\r\n\r\n/* --------------- */\r\n\r\n#pricing-table ul {\r\n\tmargin: 20px 0 0 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n}\r\n\r\n#pricing-table li {\r\n\tborder-top: 1px solid #ddd;\r\n\tpadding: 10px 0;\r\n}\r\n\r\n/* --------------- */\r\n\t\r\n#pricing-table .signup {\r\n\tposition: relative;\r\n\tpadding: 8px 20px;\r\n\tmargin: 20px 0 0 0;  \r\n\tcolor: #fff;\r\n\tfont: bold 14px Arial, Helvetica;\r\n\ttext-transform: uppercase;\r\n\ttext-decoration: none;\r\n\tdisplay: inline-block;       \r\n\tbackground-color: #72ce3f;\r\n\tbackground-image: -moz-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#72ce3f), to(#62bc30));    \r\n\tbackground-image: -webkit-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -o-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: -ms-linear-gradient(#72ce3f, #62bc30);\r\n\tbackground-image: linear-gradient(#72ce3f, #62bc30);\r\n\t-moz-border-radius: 3px;\r\n\t-webkit-border-radius: 3px;\r\n\tborder-radius: 3px;     \r\n\ttext-shadow: 0 1px 0 rgba(0,0,0,.3);        \r\n\t-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\t-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n\tbox-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);\r\n}\r\n\r\n#pricing-table .signup:hover {\r\n\tbackground-color: #62bc30;\r\n\tbackground-image: -moz-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -webkit-gradient(linear, left top, left bottom, from(#62bc30), to(#72ce3f));      \r\n\tbackground-image: -webkit-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -o-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: -ms-linear-gradient(#62bc30, #72ce3f);\r\n\tbackground-image: linear-gradient(#62bc30, #72ce3f); \r\n}\r\n\r\n#pricing-table .signup:active, #pricing-table .signup:focus {\r\n\tbackground: #62bc30;       \r\n\ttop: 2px;\r\n\t-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\t-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;\r\n\tbox-shadow: 0 0 3px rgba(0, 0, 0, .7) inset; \r\n}\r\n\r\n/* --------------- */\r\n\r\n.clear:before, .clear:after {\r\n  content:\"\";\r\n  display:table\r\n}\r\n\r\n.clear:after {\r\n  clear:both\r\n}\r\n\r\n.clear {\r\n  zoom:1\r\n}\r\n\t</style>\r\n</head>\r\n<body>\r\n";
+        
+		if(flightHtml.equals("")){
+			errorLbl.setText("Please set Destination & Departure & Arrival Date & Origin City");
+			dg.show();
+			return;
+		}
+		
+        html += flightHtml;
         html += "</body>\r\n</html>";
         
         loadWebView(html);
@@ -353,6 +474,12 @@ public class CrawlerUIController {
 		html += "blockquote.twitter-tweet a:hover, blockquote.twitter-tweet a:focus { text-decoration: underline;}";
 	    html += "</style>\r\n</head>\r\n<body>\r\n";
         
+	    if(socialHtml.equals("")){
+			errorLbl.setText("Please set a Destination");
+			dg.show();
+			return;
+		}
+	    
         html += socialHtml;
         html += "</body>\r\n</html>";
         
