@@ -33,9 +33,6 @@ public class FacebookCrawler {
 						  int i = 1;
 						  for (Post post: feed) {
 							  FbData temp = new FbData(idx, page.getName(), post.getMessage(), post.getPermalinkUrl(), post.getFullPicture());
-//							  System.out.println(post.getMessage());
-//							  System.out.println(post.getPicture());
-//							  System.out.println(post.getPermalinkUrl());
 							  list.add(temp);
 							  if (idx == 15) return list;
 							  idx++;
