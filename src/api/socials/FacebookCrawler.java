@@ -1,6 +1,5 @@
 package api.socials;
 
-import java.lang.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,31 +49,5 @@ public class FacebookCrawler {
         }
 		
 		return list;
-	}
-	
-	public void test(String searchTerm) {
-		try {
-			
-			Connection<Page> publicSearch =
-					  facebookClient.fetchConnection("search", Page.class,
-					    Parameter.with("q", searchTerm), Parameter.with("type", "page"));
-			
-			for (List<Page> feedConnectionPage : publicSearch) {
-				  for (Page i : feedConnectionPage) {
-					  Connection<Post> pageFeed = facebookClient.fetchConnection(i.getId() + "/feed", Post.class, Parameter.with("fields", "message,permalink_url,picture,full_picture"));
-					  for (List<Post> feed: pageFeed) {
-						  for (Post j: feed) {
-							  System.out.println(j.getMessage());
-							  System.out.println(j.getPicture());
-							  System.out.println(j.getPermalinkUrl());
-						  }
-					  }
-					  System.out.println();
-				  }
-			}
-			
-        } catch (FacebookException ex) {     //So that you can see what went wrong
-            ex.printStackTrace(System.err);  //in case you did anything incorrectly
-        }
 	}
 }
