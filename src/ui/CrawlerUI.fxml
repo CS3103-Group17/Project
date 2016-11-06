@@ -24,13 +24,13 @@
                   <TreeView fx:id="travelLocationTreeView" prefHeight="200.0" prefWidth="200.0" />
                </children></StackPane>
             <StackPane fx:id="displayInformationStackPane" focusTraversable="true" layoutX="260.0" layoutY="181.0" prefHeight="512.0" prefWidth="740.0" />
-            <JFXButton fx:id="searchButton" buttonType="RAISED" layoutX="499.0" layoutY="127.0" onMouseClicked="#searchButtonOnClicked" prefHeight="38.0" prefWidth="95.0" ripplerFill="#1a00ff" styleClass="button-raised" stylesheets="@style.css" text="Search" />
             <JFXDatePicker fx:id="arrivalDatePicker" editable="false" layoutX="14.0" layoutY="83.0" onKeyPressed="#searchPaneOnKeyPressed" promptText="Departure" />
             <JFXDatePicker fx:id="departureDatePicker" editable="false" layoutX="219.0" layoutY="83.0" onKeyPressed="#searchPaneOnKeyPressed" promptText="Return" />
             <JFXTextField fx:id="nameTextField" layoutX="14.0" layoutY="40.0" maxWidth="403.0" minWidth="368.0" onKeyPressed="#searchPaneOnKeyPressed" prefHeight="33.0" prefWidth="373.0" promptText="Destination" />
             <JFXTextField fx:id="pointOfInterestTextField" layoutX="14.0" layoutY="129.0" maxWidth="403.0" minWidth="368.0" onKeyPressed="#searchPaneOnKeyPressed" prefHeight="33.0" prefWidth="373.0" promptText="Origin City" />
             <JFXSpinner fx:id="loadingSpinner" layoutX="457.0" layoutY="129.0" visible="false" />
             <StackPane fx:id="errorPane" layoutX="457.0" layoutY="44.0" prefHeight="78.0" prefWidth="525.0" />
+            <JFXButton fx:id="searchButton" layoutX="489.0" layoutY="127.0" onMouseClicked="#searchButtonOnClicked" styleClass="button-raised" stylesheets="@style.css" text="Search" />
          </children>
       </Pane>
    </top>
